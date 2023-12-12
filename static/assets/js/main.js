@@ -260,3 +260,14 @@
   new PureCounter();
 
 })()
+
+function navigateToSection(section) {
+    const homeURL = 'http://127.0.0.1:8000';
+    if (window.location.href === homeURL || window.location.href === homeURL + '/') {
+        // If yes, navigate to the '#a' anchor on the homepage
+        window.location.href = homeURL + '#' + section;
+    } else {
+        // If not, navigate to the homepage with the '#a' anchor
+        window.location.href = homeURL + '#' + section;
+    }
+}

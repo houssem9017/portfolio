@@ -637,7 +637,7 @@ section {
 }
 .portfolio .portfolio-wrap .portfolio-title {
   position: absolute;
-  top: 50%;
+  bottom: 0%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
@@ -648,6 +648,7 @@ section {
 .portfolio .portfolio-wrap .portfolio-title h3 {
   color: rgba(20, 157, 221);
   margin: 0;
+    font-size: 48px;
   /* Add any other styling for the title here */
 }
 .portfolio .portfolio-wrap::before {

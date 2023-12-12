@@ -21,5 +21,6 @@ import apps
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.main.urls'))
+    path('', include('apps.main.urls')),
+    path('', include('apps.portfolio_app.urls'))
 ]
