@@ -5,7 +5,7 @@
     "fields": {
       "title": "El Maken",
       "category": "Hackathon",
-      "description": "\"El Maken\" is an online platform developed within a span of 12 hours during a hackathon, dedicated to showcasing the vibrant activities and rich history of the youth club bearing the same name.",
+      "description": "\"El Maken\" is an online platform developed within a span of 12 hours during a hackathon, dedicated to showcasing the vibrant activities and rich history of the youth club bearing the same name.<br>You can view the website in real time <a href='https://el-maken.vercel.app/' target='_blank'>Here</a>",
       "github_link": "https://github.com/houssem9017/el_maken",
       "creation_date": "2023-11-12",
       "images": [
@@ -15,6 +15,20 @@
         "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/4_ewxq4q.png",
         "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/5_dc8bcw.png",
         "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/6_v85owo.png"
+      ]
+    }
+  },
+  {
+    "model": "portfolio_app.portfolio",
+    "pk": 2,
+    "fields": {
+      "title": "GreenTech",
+      "category": "Internship Project",
+      "description": "GreenTech-backend is a Node.js server application developed as part of a three-month internship at GreenTech, Germany in summer 2023. This application is designed to manage eco-friendly packaging solutions, focusing on sustainability and environmental friendliness. It offers a suite of RESTful API endpoints for robust user authentication and package management, utilizing technologies such as Express, MongoDB, and JWT to ensure secure and efficient operations.",
+      "github_link": "https://github.com/houssem9017/GreenTech-backend",
+      "creation_date": "2023-07-08",
+      "images": [
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702613368/static/assets/static/assets/portfolio_app/images/greentech/greentech.png"
       ]
     }
   }
