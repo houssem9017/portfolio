@@ -80,5 +80,22 @@
             "/static/portfolio_app/images/career_pulse/1.png"
         ]
     }
+  },
+  {
+    "model": "portfolio_app.portfolio",
+    "pk": 6,
+    "fields": {
+      "title": "Super Coin Sniper",
+      "category": "Freelance",
+      "creation_date": "2023-07-20",
+      "description": "Super Coin Sniper is a <b>Django</b> web application developed as a marketplace for purchasing and selling Fifa Fut Coins.The project includes:<ul><li>Payment integration with <b>Coinbase</b> and <b>Stripe</b>.</li><li><b>Admin Panel</b> for managing orders.</li><li>Custom <b>Mailing service</b> for users to inform them with each step we take.</li></ul>",
+      "images": [
+        "/static/portfolio_app/images/scs/0.png",
+        "/static/portfolio_app/images/scs/1.png",
+        "/static/portfolio_app/images/scs/2.png",
+        "/static/portfolio_app/images/scs/3.png",
+        "/static/portfolio_app/images/scs/4.png"
+      ]
+    }
   }
 ]
