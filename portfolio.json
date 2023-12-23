@@ -9,12 +9,13 @@
       "github_link": "https://github.com/houssem9017/el_maken",
       "creation_date": "2023-11-12",
       "images": [
-        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/1_x4yvx7.png",
-        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/2_x3jsex.png",
-        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/3_oyqutv.png",
-        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/4_ewxq4q.png",
-        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/5_dc8bcw.png",
-        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702398066/static/assets/static/assets/portfolio_app/images/elmaken/6_v85owo.png"
+        "/static/portfolio_app/images/elmaken/elmaken.png",
+        "/static/portfolio_app/images/elmaken/1.png",
+        "/static/portfolio_app/images/elmaken/2.png",
+        "/static/portfolio_app/images/elmaken/3.png",
+        "/static/portfolio_app/images/elmaken/4.png",
+        "/static/portfolio_app/images/elmaken/5.png",
+        "/static/portfolio_app/images/elmaken/6.png"
       ]
     }
   },
@@ -23,13 +24,61 @@
     "pk": 2,
     "fields": {
       "title": "GreenTech",
-      "category": "Internship Project",
+      "category": "Internship",
       "description": "GreenTech-backend is a Node.js server application developed as part of a three-month internship at GreenTech, Germany in summer 2023. This application is designed to manage eco-friendly packaging solutions, focusing on sustainability and environmental friendliness. It offers a suite of RESTful API endpoints for robust user authentication and package management, utilizing technologies such as Express, MongoDB, and JWT to ensure secure and efficient operations.",
       "github_link": "https://github.com/houssem9017/GreenTech-backend",
       "creation_date": "2023-07-08",
       "images": [
-        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1702614018/static/assets/static/assets/portfolio_app/images/greentech/greentech2.png"
+        "/static/portfolio_app/images/greentech/greentech2.png"
       ]
+    }
+  },
+  {
+    "model": "portfolio_app.portfolio",
+    "pk": 3,
+    "fields": {
+      "title": "BallerChain",
+      "category": "Academic",
+      "description": "<p>This project is a backend for a mobile application that leverages <b>blockchain technology</b> for a fantasy football gaming experience. Developed as part of an academic project, it is written in <b>Node.js</b> and uses npm for package management, along with the <b>Web3.js</b> library for interactions with the <b>Ethereum blockchain</b>. It specifically connects with a personal Ethereum blockchain using <b>Ganache</b> for development and testing.</p>\n\n<p>My primary responsibilities in this project focused on Fantasy Football Features, including:</p>\n\n<ul>\n    <li>Implementing card scraping and daily performance-based card level upgrades.</li>\n    <li>Enabling users to build and manage teams using virtual cards.</li>\n <li>Creating a system for trading cards in a digital marketplace.</li>\n    <li>Packs with random cards, with varying probabilities based on pack price.</li>\n</ul>\n",
+      "github_link": "https://github.com/houssem9017/BallerChain-Backend",
+      "creation_date": "2023-03-10",
+      "images": [
+        "/static/portfolio_app/images/ballerchain/ballerchain.png"
+      ]
+    }
+  },
+  {
+    "model": "portfolio_app.portfolio",
+    "pk": 4,
+    "fields": {
+      "title": "Devops Project",
+      "category": "Academic",
+      "creation_date": "2023-11-15",
+      "description": "<p>Developed during an academic project, this <b>SpringBoot</b> web application features a DevOps-enabled infrastructure:</p>\n\n<ul>\n    <li>Automated <b>CI/CD pipeline</b> orchestrated by <b>Jenkins</b>.</li>\n    <li><b>Ubuntu VM</b> managed with <b>Vagrant</b> for replicable environments.</li>\n    <li>Code compilation and dependency management with <b>Maven</b>.</li>\n    <li>Automated unit and integration testing with <b>Mockito</b>.</li>\n    <li><b>SonarQube</b> integration for continuous code quality checks.</li>\n    <li><b>Sonatype Nexus</b> repository for secure artifact storage.</li>\n    <li><b>Docker</b> for containerization and seamless deployment.</li>\n</ul>\n\n<p>This setup demonstrates a modern approach to software development, emphasizing automation, quality assurance, and containerization.</p>\n",
+      "images": [
+        "/static/portfolio_app/images/devops/jenkins.png",
+        "/static/portfolio_app/images/devops/nexus.png",
+        "/static/portfolio_app/images/devops/project.png"
+      ]
+    }
+  },
+  {
+    "model": "portfolio_app.portfolio",
+    "pk": 5,
+    "fields": {
+      "title": "Career Pulse",
+      "category": "Hackathon",
+      "description": "Career Pulse is developed with the <strong>MERN stack</strong> (MongoDB, Express.js, React, Node.js), offers a comprehensive platform for human resources management. It is distinguished by three key interfaces:</p>\n\n<ul>\n  <li><strong>Satisfaction Rate Interface</strong> : Sorts employees based on their likelihood of resignation and displays their salaries, with details on potential reasons for their departure.</li>\n  <li><strong>Promotion Readiness Interface</strong> : Shows the preparedness of employees for promotions, with personalized suggestions for training and team changes.</li>\n  <li><strong>New Recruits Interface</strong> : Displays profiles of new employees and recommends teams suited to their personalities and skills.</li>\n</ul>\n\n<p>This solution incorporates advanced visualization and analysis features, making personnel management more efficient and strategic.</p>\n",
+      "github_link": "https://github.com/houssem9017/Career-Pulse-Frontend",
+        "creation_date": "2023-12-16",
+        "images": [
+            "/static/portfolio_app/images/career_pulse/2.png",
+            "/static/portfolio_app/images/career_pulse/3.png",
+            "/static/portfolio_app/images/career_pulse/4.png",
+            "/static/portfolio_app/images/career_pulse/5.png",
+            "/static/portfolio_app/images/career_pulse/6.png",
+            "/static/portfolio_app/images/career_pulse/1.png"
+        ]
     }
   }
 ]

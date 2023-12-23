@@ -32,18 +32,24 @@
             </div>
 
         <div class="row gy-4">
-            <div class="portfolio-description col-lg-7">
+            <div class="portfolio-description col-lg-8">
               <h2>Project description</h2>
               <p>
                 {{ item.description | safe }}
               </p>
             </div>
-            <div class="portfolio-info col-lg-5">
+            <div class="portfolio-info col-lg-4">
               <h3>Project information</h3>
               <ul>
                 <li><strong>Category: </strong>{{ item.category }} project</li>
                 <li><strong>Project date</strong>: {{ item.creation_date |date:"jS F Y"}}</li>
-                <li><strong>Github link</strong>: <a href="{{ item.github_link }}">{{ item.github_link }}</a></li>
+                <li><strong>Github link</strong>:
+                    {% if item.github_link %}
+                    <a href="{{ item.github_link }}">Click here</a>
+                    {% else %}
+                    <a>Not available</a>
+                    {% endif %}
+                </li>
               </ul>
             </div>
         </div>
