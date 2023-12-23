@@ -637,7 +637,7 @@ section {
 }
 .portfolio .portfolio-wrap .portfolio-title {
   position: absolute;
-  bottom: 50%;
+  bottom: 0%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
@@ -881,7 +881,7 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
-.contact .info svg {
+.contact .info i {
   font-size: 20px;
   color: #149ddd;
   float: left;
