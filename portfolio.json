@@ -1,6 +1,59 @@
 [
   {
     "model": "portfolio_app.portfolio",
+    "pk": 7,
+    "fields": {
+      "title": "BestHR ERP",
+      "category": "Internship",
+      "description": "The solution envisaged is a web platform that centralizes all these functionalities. The main key dimensions that the platform must ensure are:<br><ul><li><strong>Complete historical tracking of tasks:</strong> total traceability of creations, modifications, assignments, pauses, completions, and budget additions for each task.</li><li><strong>Absence management:</strong> increased visibility for collaborators on their absence days, available days, and schedules.</li><li><strong>Schedule tracking:</strong> clear view for managers on time worked versus planned time, with calculation of overtime, weekends, and holidays.</li><li><strong>Automation:</strong> simplification of task and absence management processes, allowing better resource allocation.</li></ul>",
+      "creation_date": "2024-07-01",
+      "images": [
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419157/besthrerp/connexion.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419157/besthrerp/recherche_employe.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419156/besthrerp/ajout_employe.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419158/besthrerp/liste_taches.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419156/besthrerp/cycle_de_travail.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419155/besthrerp/liste_employes_temps.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419156/besthrerp/criteres_acceptation_auto.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419157/besthrerp/notification_conge.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419156/besthrerp/tache_mail.png"
+      ]
+    }
+  },
+  {
+    "model": "portfolio_app.portfolio",
+    "pk": 8,
+    "fields": {
+      "title": "NOZ AI Hackathon",
+      "category": "Hackathon",
+      "description": "Created a supplier platform featuring comprehensive databases for France and Belgium suppliers, with region-based search functionality and data update capabilities. Database built through scraping multiple public websites. <a href='https://www.canva.com/design/DAGf6L7CImg/bjl1wx50RVZVn-FVtaCUcg/edit' target='_blank'>View Project Details</a>",
+      "creation_date": "2024-11-15",
+      "images": [
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419269/noz%20ai/image.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419269/noz%20ai/image_copy.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419268/noz%20ai/image_copy_2.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419268/noz%20ai/image_copy_3.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419270/noz%20ai/image_copy_4.png"
+      ]
+    }
+  },
+  {
+    "model": "portfolio_app.portfolio",
+    "pk": 9,
+    "fields": {
+      "title": "E-Health Valley 2",
+      "category": "Hackathon",
+      "description": "Comprehensive pharmaceutical platform developed for E-Health Valley hackathon. Features patient database management, specialized asthma treatment tracking, historical treatment records, and interactive quiz system that generates PDF reports. The platform provides healthcare professionals with tools for better patient management and treatment tracking.",
+      "creation_date": "2024-10-20",
+      "images": [
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419410/ehealth/459681479_1761288064410347_4979833571078674614_n.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419410/ehealth/459714078_556696553591916_444529069663920502_n.png",
+        "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419411/ehealth/461112202_3590097221281553_6332449940517605507_n.png"
+      ]
+    }
+  },
+  {
+    "model": "portfolio_app.portfolio",
     "pk": 1,
     "fields": {
       "title": "El Maken",

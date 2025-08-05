@@ -23,11 +23,9 @@
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
                 {% for image in item.images %}
-                {% if "0" not in image %}
                 <div class="swiper-slide">
                   <img src="{{ image }}" alt="">
                 </div>
-                    {% endif %}
                 {% endfor %}
               </div>
               <div class="swiper-pagination"></div>
@@ -39,6 +37,13 @@
               <p>
                 {{ item.description | safe }}
               </p>
+              
+              <!-- Return Button -->
+              <div class="mt-4">
+                <a href="{% url 'index' %}#portfolio" class="btn btn-primary">
+                  ←
+                </a>
+              </div>
             </div>
             <div class="portfolio-info col-lg-4">
               <h3>Project information</h3>
@@ -60,4 +65,19 @@
 
       </div>
     </section><!-- End Portfolio Details Section -->
+
+    <style>
+    .portfolio-details-slider .swiper-slide img {
+        max-height: 543px;
+        object-fit: contain;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .portfolio-details-slider {
+        max-height: 600px;
+        overflow: hidden;
+    }
+    </style>
 {% endblock %}
