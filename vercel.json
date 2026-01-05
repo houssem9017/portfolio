@@ -6,7 +6,8 @@
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
+        "runtime": "python3.9",
+        "nodeVersion": "24.x"
       }
     },
     {
@@ -27,15 +28,5 @@
       "dest": "portfolio/wsgi.py"
     }
   ],
-  "outputDirectory": "staticfiles",
-  "functions": {
-    "portfolio/wsgi.py": {
-      "runtime": "python3.9"
-    }
-  },
-  "build": {
-    "env": {
-      "NODE_VERSION": "24"
-    }
-  }
+  "outputDirectory": "staticfiles"
 }
