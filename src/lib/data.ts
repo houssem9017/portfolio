@@ -85,6 +85,7 @@ export const skills: Skill[] = [
   { name: "Angular", percentage: 90 },
   { name: "Node.js", percentage: 90 },
   { name: "Next.js", percentage: 85 },
+  { name: "Framer Motion", percentage: 85 },
   { name: "Git", percentage: 85 },
 ];
 
