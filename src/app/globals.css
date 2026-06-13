@@ -43,8 +43,13 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
+.lenis-wrapper,
+.lenis-wrapper * {
+  background-color: #030712;
+}
+
 body {
-  background: var(--background);
+  background: #030712;
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;

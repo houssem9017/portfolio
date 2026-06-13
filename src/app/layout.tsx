@@ -27,9 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <style>{`html,body{background-color:#030712!important;margin:0}`}</style>
         <script
           dangerouslySetInnerHTML={{
-            __html: `history.scrollRestoration="manual"`,
+            __html: `document.documentElement.style.backgroundColor="#030712";history.scrollRestoration="manual"`,
           }}
         />
       </head>
