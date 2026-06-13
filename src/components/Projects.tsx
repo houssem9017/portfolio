@@ -6,6 +6,23 @@ import { useRef } from "react";
 import { projects } from "@/lib/data";
 import { useLanguage } from "@/components/LanguageProvider";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.5 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  },
+};
+
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -31,15 +48,18 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="grid md:grid-cols-2 gap-6"
+        >
           <AnimatePresence>
-            {displayed.map((project, i) => (
+            {displayed.map((project) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                variants={cardVariants}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="bg-[#111827] border border-[#1f2937] rounded-xl p-6 hover:border-[#374151] transition-all duration-300"
               >
                 <div className="flex items-center gap-2 mb-3">
@@ -81,7 +101,7 @@ export default function Projects() {
               </motion.div>
             ))}
           </AnimatePresence>
-        </div>
+        </motion.div>
 
         {projects.length > 4 && (
           <motion.div

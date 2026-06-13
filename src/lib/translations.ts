@@ -28,7 +28,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       stats_clients: "Clients",
       p1: "I'm a Fullstack Developer specialized in building robust web applications using Django and Angular. My experience spans backend architecture, frontend interfaces, and API integrations.",
       p2: "With a solid foundation from academic projects, internships, and hackathons, I deliver efficient and scalable solutions. I thrive in fast-paced environments, combining problem-solving skills with a focus on clean, maintainable code.",
-      p3: "Proficient in Python, JavaScript, PHP, and C# (.NET). Skilled in managing relational and NoSQL databases. Fluent in English and French.",
+      p3: "Proficient in Python (Django), JavaScript/TypeScript (Node.js, Next.js, Angular), and Framer Motion. Skilled in Git workflows, relational and NoSQL databases. Fluent in English and French.",
     },
     skills: {
       heading: "Skills & Expertise",
@@ -106,7 +106,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       stats_clients: "Clients",
       p1: "Je suis un développeur Fullstack spécialisé dans la création d'applications web robustes avec Django et Angular. Mon expérience couvre l'architecture backend, les interfaces frontend et les intégrations d'API.",
       p2: "Avec une base solide issue de projets académiques, de stages et de hackathons, je fournis des solutions efficaces et évolutives. Je m'épanouis dans des environnements dynamiques, combinant des compétences en résolution de problèmes avec un accent sur un code propre et maintenable.",
-      p3: "Compétent en Python, JavaScript, PHP et C# (.NET). Expérimenté dans la gestion de bases de données relationnelles et NoSQL. Parlant couramment anglais et français.",
+      p3: "Compétent en Python (Django), JavaScript/TypeScript (Node.js, Next.js, Angular) et Framer Motion. Expérimenté avec Git, les bases de données relationnelles et NoSQL. Parlant couramment anglais et français.",
     },
     skills: {
       heading: "Compétences & Expertise",
