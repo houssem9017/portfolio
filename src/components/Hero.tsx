@@ -85,9 +85,9 @@ export default function Hero() {
           className="text-lg sm:text-xl text-[#9ca3af] max-w-2xl mx-auto leading-relaxed"
         >
           {t("hero.tagline", {
-            tech1: "Django",
-            tech2: "Angular",
-            tech3: "Node.js",
+            tech1: "Next.js",
+            tech2: "Django",
+            tech3: "Angular",
           })}
         </p>
 
