@@ -48,6 +48,7 @@ export default function Hero() {
 
       <motion.div
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#6366f1]/20 blur-[120px] pointer-events-none"
+        initial={{ scale: 1, opacity: 0.3 }}
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
