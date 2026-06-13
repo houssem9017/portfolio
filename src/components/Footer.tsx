@@ -1,11 +1,15 @@
 "use client";
 
+import { useLanguage } from "@/components/LanguageProvider";
+
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-8 border-t border-[#1f2937]">
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-sm text-[#6b7280]">
-          &copy; {new Date().getFullYear()} Darragi Houssem. All rights reserved.
+          &copy; {new Date().getFullYear()} Darragi Houssem. {t("footer.rights")}
         </div>
         <div className="flex items-center gap-4">
           <a

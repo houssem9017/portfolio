@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { websites } from "@/lib/data";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,6 +26,10 @@ const cardVariants = {
 export default function Websites() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
+
+  const desc = (i: number) => t(`websites.item${i + 1}_desc`);
+  const title = (i: number) => t(`websites.item${i + 1}_title`);
 
   return (
     <section id="websites" className="py-24 bg-[#0a0f1a] relative overflow-hidden">
@@ -41,16 +46,15 @@ export default function Websites() {
           <div className="flex items-center gap-3 mb-2">
             <div className="h-6 w-1 bg-[#6366f1] rounded-full" />
             <span className="text-[#6366f1] font-mono text-sm tracking-widest uppercase">
-              Live Websites
+              {t("websites.label")}
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-2">
-            Featured <span className="text-[#6366f1]">Websites</span>
+            {t("websites.heading")}
           </h2>
           <div className="w-20 h-1 bg-[#6366f1] rounded-full mb-4" />
           <p className="text-[#9ca3af] mb-12 max-w-2xl">
-            Live projects I&apos;ve built and deployed. Each one represents real-world
-            solutions for clients and businesses.
+            {t("websites.description")}
           </p>
         </motion.div>
 
@@ -60,7 +64,7 @@ export default function Websites() {
           animate={isInView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 gap-6"
         >
-          {websites.map((site) => (
+          {websites.map((site, i) => (
             <motion.a
               key={site.url}
               href={site.url}
@@ -73,7 +77,7 @@ export default function Websites() {
                 <div className="w-full h-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center">
                   <div className="text-center p-6">
                     <div className="text-3xl font-bold text-[#6366f1] mb-2">
-                      {site.title}
+                      {title(i)}
                     </div>
                     <div className="text-xs text-[#6b7280] font-mono break-all">
                       {site.url.replace(/^https?:\/\//, "")}
@@ -85,14 +89,14 @@ export default function Websites() {
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   <span className="text-xs text-green-500 font-mono">
-                    Live
+                    {t("websites.badge")}
                   </span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2 group-hover:text-[#6366f1] transition-colors">
-                  {site.title}
+                  {title(i)}
                 </h3>
                 <p className="text-sm text-[#9ca3af] mb-4 leading-relaxed">
-                  {site.description}
+                  {desc(i)}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {site.tags.map((tag) => (

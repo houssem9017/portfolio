@@ -3,10 +3,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { skills } from "@/lib/data";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Skills() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const { t } = useLanguage();
 
   return (
     <section id="skills" className="py-24 bg-[#0a0f1a] relative">
@@ -18,14 +20,12 @@ export default function Skills() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-2">
-            Skills &amp; <span className="text-[#6366f1]">Expertise</span>
+            {t("skills.heading")}
           </h2>
           <div className="w-20 h-1 bg-[#6366f1] rounded-full mb-8" />
 
           <p className="text-[#9ca3af] mb-12 max-w-2xl">
-            My project experience in multiple languages showcases my rapid
-            adaptability and eagerness to learn, enabling me to thrive in
-            evolving tech environments.
+            {t("skills.description")}
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">

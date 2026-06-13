@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { experiences, education, achievements } from "@/lib/data";
+import { useLanguage } from "@/components/LanguageProvider";
 
 function TimelineItem({
   children,
@@ -31,6 +32,7 @@ function TimelineItem({
 export default function Resume() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useLanguage();
 
   return (
     <section id="resume" className="py-24 relative">
@@ -42,14 +44,14 @@ export default function Resume() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-2">
-            My <span className="text-[#6366f1]">Resume</span>
+            {t("resume.heading")}
           </h2>
           <div className="w-20 h-1 bg-[#6366f1] rounded-full mb-12" />
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl font-semibold mb-6 text-[#6366f1]">
-                Experience
+                {t("resume.experience")}
               </h3>
               {experiences.map((exp, i) => (
                 <TimelineItem key={i} index={i}>
@@ -90,7 +92,7 @@ export default function Resume() {
 
             <div>
               <h3 className="text-xl font-semibold mb-6 text-[#6366f1]">
-                Education
+                {t("resume.education")}
               </h3>
               {education.map((edu, i) => (
                 <TimelineItem key={i} index={i}>
@@ -121,7 +123,7 @@ export default function Resume() {
               ))}
 
               <h3 className="text-xl font-semibold mb-6 mt-8 text-[#6366f1]">
-                Achievements
+                {t("resume.achievements")}
               </h3>
               {achievements.map((ach, i) => (
                 <TimelineItem key={i} index={i + education.length}>

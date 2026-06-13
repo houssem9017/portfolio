@@ -3,12 +3,14 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -64,7 +66,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[#6366f1] font-mono text-sm mb-4 tracking-widest uppercase"
         >
-          Fullstack Developer
+          {t("hero.role")}
         </motion.p>
 
         <h1
@@ -72,9 +74,9 @@ export default function Hero() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight mb-6"
           style={{ perspective: "1000px" }}
         >
-          Darragi{" "}
+          {t("hero.firstName")}{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#818cf8]">
-            Houssem
+            {t("hero.lastName")}
           </span>
         </h1>
 
@@ -82,10 +84,11 @@ export default function Hero() {
           ref={subtitleRef}
           className="text-lg sm:text-xl text-[#9ca3af] max-w-2xl mx-auto leading-relaxed"
         >
-          Building robust web applications with modern technologies.
-          Specialized in <strong className="text-white">Django</strong>,{" "}
-          <strong className="text-white">Angular</strong>, and{" "}
-          <strong className="text-white">Node.js</strong>.
+          {t("hero.tagline", {
+            tech1: "Django",
+            tech2: "Angular",
+            tech3: "Node.js",
+          })}
         </p>
 
         <div ref={ctaRef} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -93,13 +96,13 @@ export default function Hero() {
             href="#websites"
             className="px-8 py-3 bg-[#6366f1] hover:bg-[#4f46e5] text-white rounded-full font-medium transition-all duration-200 hover:scale-105 active:scale-95"
           >
-            View My Work
+            {t("hero.ctaWork")}
           </a>
           <a
             href="#contact"
             className="px-8 py-3 border border-[#1f2937] hover:border-[#6366f1]/50 text-[#9ca3af] hover:text-white rounded-full font-medium transition-all duration-200"
           >
-            Get In Touch
+            {t("hero.ctaContact")}
           </a>
         </div>
       </div>
