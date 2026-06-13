@@ -44,7 +44,7 @@ export default function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#030712] via-[#6366f1]/8 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030712] from-15% via-transparent via-35% to-transparent pointer-events-none" />
 
       <motion.div
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#6366f1]/20 blur-[120px] pointer-events-none"
