@@ -11,7 +11,7 @@ export default function About() {
   const { t } = useLanguage();
 
   const stats = [
-    { label: t("about.stats_experience"), value: "4+ Years" },
+    { label: t("about.stats_experience"), value: t("about.stats_experience_value") },
     { label: t("about.stats_hackathons"), value: "5" },
   ];
 

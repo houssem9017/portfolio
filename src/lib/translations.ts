@@ -22,6 +22,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
     about: {
       heading: "About Me",
       stats_experience: "Experience",
+      stats_experience_value: "4+ Years",
       stats_projects: "Projects",
       stats_hackathons: "Hackathons Won",
       stats_clients: "Clients",
@@ -99,6 +100,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
     about: {
       heading: "À propos de moi",
       stats_experience: "Expérience",
+      stats_experience_value: "4+ Années",
       stats_projects: "Projets",
       stats_hackathons: "Hackathons gagnés",
       stats_clients: "Clients",
