@@ -15,6 +15,12 @@
 :root {
   --background: #030712;
   --foreground: #f9fafb;
+  color-scheme: dark;
+}
+
+html {
+  background-color: #030712;
+  scrollbar-gutter: stable;
 }
 
 html.lenis, html.lenis body {
@@ -42,6 +48,22 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
 }
 
 ::selection {

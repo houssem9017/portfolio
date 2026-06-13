@@ -24,7 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `history.scrollRestoration="manual"`,
+        }} />
+      </head>
       <body className="min-h-screen bg-[#030712] text-[#f9fafb] antialiased">
         <SmoothScroll>
           <Navbar />
