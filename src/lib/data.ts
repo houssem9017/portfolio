@@ -82,10 +82,9 @@ export const websites: Website[] = [
 
 export const skills: Skill[] = [
   { name: "Django", percentage: 95 },
-  { name: "Node.js", percentage: 90 },
   { name: "Angular", percentage: 90 },
-  { name: "PHP", percentage: 85 },
-  { name: ".NET", percentage: 80 },
+  { name: "Node.js", percentage: 90 },
+  { name: "Next.js", percentage: 85 },
   { name: "Git", percentage: 85 },
 ];
 

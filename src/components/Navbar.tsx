@@ -36,6 +36,7 @@ export default function Navbar() {
           : "bg-[#030712]/80"
       }`}
     >
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: -2, height: 3, backgroundColor: "#030712", pointerEvents: "none" }} aria-hidden="true" />
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a
           href="#hero"
