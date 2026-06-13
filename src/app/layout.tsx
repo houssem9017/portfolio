@@ -25,16 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning style={{ backgroundColor: "#030712" }}>
       <head>
         <style>{`html,body{background-color:#030712!important;margin:0}`}</style>
         <script
           dangerouslySetInnerHTML={{
-            __html: `document.documentElement.style.backgroundColor="#030712";history.scrollRestoration="manual"`,
+            __html: `document.documentElement.style.backgroundColor="#030712";document.body.style.backgroundColor="#030712";history.scrollRestoration="manual";window.addEventListener("pageshow",function(e){document.documentElement.style.backgroundColor="#030712";document.body.style.backgroundColor="#030712"})`,
           }}
         />
       </head>
-      <body className="min-h-screen bg-[#030712] text-[#f9fafb] antialiased">
+      <body className="min-h-screen bg-[#030712] text-[#f9fafb] antialiased" style={{ backgroundColor: "#030712" }}>
         <LanguageProvider>
           <SmoothScroll>
             <Navbar />
