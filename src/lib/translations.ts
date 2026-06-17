@@ -50,9 +50,15 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       item3_title: "Naouar",
       item3_desc:
         "Professional portfolio and business showcase for Naouar, delivering a clean and modern web presence.",
-      item4_title: "El Maken",
+      item4_title: "Nexa Store",
       item4_desc:
-        "Youth club platform showcasing vibrant activities and rich history, built in 12 hours during a hackathon.",
+        "Premium product e-commerce platform for professionals featuring electronics, accessories, and wearables with a complete dashboard.",
+      item5_title: "Café Oasis",
+      item5_desc:
+        "Elegant landing page for a café in Sidi Bou Said, Tunisia, with a refined visual identity and smooth animations.",
+      item6_title: "Éclat Prestige",
+      item6_desc:
+        "Beauty salon landing page in Tunis, Tunisia, presenting services, a gallery of work, and booking information in a refined design.",
     },
     projects: {
       heading: "Other Projects",
@@ -128,9 +134,15 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       item3_title: "Naouar",
       item3_desc:
         "Portfolio professionnel et vitrine commerciale pour Naouar, offrant une présence web moderne et épurée.",
-      item4_title: "El Maken",
+      item4_title: "Nexa Store",
       item4_desc:
-        "Plateforme de club de jeunesse présentant des activités dynamiques et une riche histoire, construite en 12 heures lors d'un hackathon.",
+        "Plateforme e-commerce de produits premium pour professionnels avec électronique, accessoires et wearables, incluant un tableau de bord complet.",
+      item5_title: "Café Oasis",
+      item5_desc:
+        "Page d'accueil élégante pour un café à Sidi Bou Said, Tunisie, avec une identité visuelle raffinée et des animations fluides.",
+      item6_title: "Éclat Prestige",
+      item6_desc:
+        "Page d'accueil pour un salon de beauté à Tunis, présentant les services, une galerie de réalisations et une prise de rendez-vous dans un design raffiné.",
     },
     projects: {
       heading: "Autres projets",

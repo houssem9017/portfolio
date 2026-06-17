@@ -75,14 +75,9 @@ export default function Websites() {
             >
               <div className="aspect-video overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="text-3xl font-bold text-[#6366f1] mb-2">
-                      {title(i)}
-                    </div>
-                    <div className="text-xs text-[#6b7280] font-mono break-all">
-                      {site.url.replace(/^https?:\/\//, "")}
-                    </div>
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#6366f1] text-[#818cf8] text-xs font-semibold tracking-wide">
+                    {site.category}
+                  </span>
                 </div>
               </div>
               <div className="p-6">

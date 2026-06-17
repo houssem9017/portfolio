@@ -1,6 +1,7 @@
 export interface Website {
   title: string;
   url: string;
+  category: string;
   description: string;
   image: string;
   tags: string[];
@@ -49,6 +50,7 @@ export const websites: Website[] = [
   {
     title: "Secur",
     url: "https://secur-zeta.vercel.app/",
+    category: "Sécurité",
     description:
       "A modern security services platform showcasing professional protection solutions with a sleek, responsive design.",
     image: "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419157/besthrerp/connexion.png",
@@ -57,6 +59,7 @@ export const websites: Website[] = [
   {
     title: "Sun Cuisine",
     url: "https://suncuisine.tn",
+    category: "Cuisine",
     description:
       "Tunisian culinary experience platform featuring authentic recipes, catering services, and a vibrant food community.",
     image: "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419269/noz%20ai/image.png",
@@ -65,18 +68,74 @@ export const websites: Website[] = [
   {
     title: "Naouar",
     url: "https://naouar.vercel.app/",
+    category: "Portfolio",
     description:
       "Professional portfolio and business showcase for Naouar, delivering a clean and modern web presence.",
     image: "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419268/noz%20ai/image_copy_2.png",
     tags: ["Next.js", "Framer Motion", "Vercel"],
   },
   {
-    title: "El Maken",
-    url: "https://el-maken.vercel.app/",
+    title: "Nexa Store",
+    url: "https://nexa-store.vercel.app/",
+    category: "E-commerce",
     description:
-      "Youth club platform showcasing vibrant activities and rich history, built in 12 hours during a hackathon.",
-    image: "/static/portfolio_app/images/elmaken/elmaken.png",
-    tags: ["React", "CSS", "Hackathon"],
+      "Premium product e-commerce platform for professionals featuring electronics, accessories, and wearables with a complete dashboard.",
+    image: "/static/portfolio_app/images/nexa-store/hero.png",
+    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+  },
+  {
+    title: "Café Oasis",
+    url: "https://cafe-oasis.vercel.app/",
+    category: "Café",
+    description:
+      "Elegant landing page for a café in Sidi Bou Said, Tunisia, with a refined visual identity and smooth animations.",
+    image: "/static/portfolio_app/images/cafe-oasis/hero.png",
+    tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+  },
+  {
+    title: "Éclat Prestige",
+    url: "https://eclat-prestige.vercel.app/",
+    category: "Beauté",
+    description:
+      "Beauty salon landing page in Tunis, Tunisia, presenting services, a gallery of work, and booking information in a refined design.",
+    image: "/static/portfolio_app/images/eclat-prestige/hero.png",
+    tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+  },
+  {
+    title: "Elle Fit Tunis",
+    url: "https://elle-fit.vercel.app/",
+    category: "Fitness",
+    description:
+      "Women-only fitness gym in Tunis offering yoga, pilates, dance cardio, and gentle weight training in an all-female environment.",
+    image: "/static/portfolio_app/images/elle-fit/hero.png",
+    tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+  },
+  {
+    title: "Epic Fitness",
+    url: "https://epic-fitness.vercel.app/",
+    category: "Fitness",
+    description:
+      "Modern mixed-gender fitness gym in Tunis with two locations, offering group classes, weight training, and certified coaching.",
+    image: "/static/portfolio_app/images/epic-fitness/hero.png",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "Titan Fitness",
+    url: "https://titan-fitness.vercel.app/",
+    category: "Fitness",
+    description:
+      "Fitness gym in Tunis with an emerald brand theme, offering weight training, cardio, and group classes to help members push their limits.",
+    image: "/static/portfolio_app/images/titan-fitness/hero.png",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "Olympe Gym",
+    url: "https://olympe-gym.vercel.app/",
+    category: "Fitness",
+    description:
+      "Mixed-gender fitness gym in Sousse with two locations, offering group classes, weight training, cardio, and a swimming pool.",
+    image: "/static/portfolio_app/images/olympe-gym/hero.png",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
 ];
 
