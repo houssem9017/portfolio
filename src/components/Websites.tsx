@@ -74,7 +74,7 @@ export default function Websites() {
           animate={isInView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 gap-6"
         >
-          {featured.map((site, i) => {
+          {featured.map((site) => {
             const globalIndex = websites.indexOf(site);
             const isLive = Boolean(site.live && site.liveUrl);
             const cardClassName =

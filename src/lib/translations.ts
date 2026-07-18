@@ -22,10 +22,6 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
     },
     about: {
       heading: "About Me",
-      stats_podiums: "Hackathon Podiums",
-      stats_podiums_detail: "4 wins · 1 runner-up",
-      stats_engineer_label: "Full-Stack Engineer",
-      stats_engineer_detail: "Django · Next.js · Angular",
       p1: "I'm a Full-Stack Software Engineer specialized in building robust web applications using Django, Next.js, and Angular. My work spans backend architecture, frontend interfaces, and API integrations.",
       p2: "I started my career in November 2024, but I've been building web applications through internships, hackathons, and personal projects since my engineering studies. I thrive in fast-paced environments, combining problem-solving skills with a focus on clean, maintainable code.",
       p3: "Proficient in Python (Django), JavaScript/TypeScript (Node.js, Next.js, Angular), and Framer Motion. Skilled in Git workflows, relational and NoSQL databases. Fluent in English and French.",
@@ -126,10 +122,6 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
     },
     about: {
       heading: "À propos de moi",
-      stats_podiums: "Podiums en hackathon",
-      stats_podiums_detail: "4 victoires · 1 2e place",
-      stats_engineer_label: "Ingénieur full-stack",
-      stats_engineer_detail: "Django · Next.js · Angular",
       p1: "Je suis un ingénieur logiciel full-stack spécialisé dans la création d'applications web robustes avec Django, Next.js et Angular. Mon travail couvre l'architecture backend, les interfaces frontend et les intégrations d'API.",
       p2: "J'ai commencé ma carrière en novembre 2024, mais je développe des applications web depuis mes études d'ingénieur, à travers des stages, des hackathons et des projets personnels. Je m'épanouis dans des environnements dynamiques, combinant résolution de problèmes et code propre et maintenable.",
       p3: "Compétent en Python (Django), JavaScript/TypeScript (Node.js, Next.js, Angular) et Framer Motion. Expérimenté avec Git, les bases de données relationnelles et NoSQL. Parlant couramment anglais et français.",
