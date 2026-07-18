@@ -86,6 +86,7 @@ export default function Projects() {
                     href={project.github_link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${project.title} — ${t("projects.source")}`}
                     className="text-xs text-[#6366f1] hover:text-[#818cf8] transition-colors inline-flex items-center gap-1"
                   >
                     <svg

@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/components/LanguageProvider";
+import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -9,13 +10,14 @@ export default function Footer() {
     <footer className="py-8 border-t border-[#1f2937]">
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-sm text-[#6b7280]">
-          &copy; {new Date().getFullYear()} Darragi Houssem. {t("footer.rights")}
+          &copy; {new Date().getFullYear()} {siteConfig.name}. {t("footer.rights")}
         </div>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/houssem9017"
+            href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`GitHub: ${siteConfig.social.githubHandle}`}
             className="text-[#6b7280] hover:text-white transition-colors"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -23,9 +25,10 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://www.linkedin.com/in/houssem-darragi/"
+            href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`LinkedIn: ${siteConfig.social.linkedinHandle}`}
             className="text-[#6b7280] hover:text-white transition-colors"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

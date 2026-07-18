@@ -3,13 +3,12 @@
 import {
   createContext,
   useContext,
-  useState,
-  useEffect,
   useCallback,
   type ReactNode,
 } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import type { Locale } from "@/lib/translations";
-import { getTranslations, getLocaleFromBrowser } from "@/lib/translations";
+import { getTranslations } from "@/lib/translations";
 
 interface LanguageContextType {
   locale: Locale;
@@ -19,28 +18,38 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
-function getCookie(name: string): string | undefined {
-  if (typeof document === "undefined") return undefined;
-  const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
-  return match?.[2];
-}
+export function LanguageProvider({
+  children,
+  locale,
+}: {
+  children: ReactNode;
+  locale: Locale;
+}) {
+  const router = useRouter();
+  const pathname = usePathname();
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("fr");
-
-  useEffect(() => {
-    const saved = getCookie("locale") as Locale | undefined;
-    const initial = saved || getLocaleFromBrowser();
-    setLocaleState(initial);
-  }, []);
-
-  const setLocale = useCallback((l: Locale) => {
-    setLocaleState(l);
-    document.cookie = `locale=${l};path=/;max-age=31536000`;
-  }, []);
+  const setLocale = useCallback(
+    (l: Locale) => {
+      document.cookie = `locale=${l};path=/;max-age=31536000;SameSite=Lax`;
+      const hash =
+        typeof window !== "undefined" ? window.location.hash : "";
+      if (l === "fr") {
+        router.push(`/fr${hash}`);
+      } else {
+        const next =
+          pathname?.startsWith("/fr")
+            ? pathname.replace(/^\/fr/, "") || "/"
+            : pathname || "/";
+        router.push(`${next}${hash}`);
+      }
+    },
+    [pathname, router]
+  );
 
   return (
-    <LanguageContext.Provider value={{ locale, setLocale, t: getTranslations(locale) }}>
+    <LanguageContext.Provider
+      value={{ locale, setLocale, t: getTranslations(locale) }}
+    >
       {children}
     </LanguageContext.Provider>
   );

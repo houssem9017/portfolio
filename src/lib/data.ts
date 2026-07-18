@@ -1,10 +1,12 @@
 export interface Website {
+  id: string;
   title: string;
-  url: string;
+  url: string | null;
   category: string;
   description: string;
   image: string;
   tags: string[];
+  live: boolean;
 }
 
 export interface Project {
@@ -46,96 +48,137 @@ export interface Achievement {
   description: string;
 }
 
+/** Central external project / website URLs — do not hardcode elsewhere. */
+export const projectUrls = {
+  secur: "https://secur-zeta.vercel.app/",
+  sunCuisine: "https://suncuisine.tn",
+  naouar: "https://naouar.vercel.app/",
+  nexaStore: "https://nexa-store.vercel.app/",
+  cafeOasis: "https://cafe-oasis.vercel.app/",
+  eclatPrestige: "https://eclat-prestige.vercel.app/",
+  elleFit: "https://elle-fit.vercel.app/",
+  epicFitness: "https://epic-fitness.vercel.app/",
+  titanFitness: "https://titan-fitness.vercel.app/",
+  olympeGym: "https://olympe-gym.vercel.app/",
+  greentechGithub: "https://github.com/houssem9017/GreenTech-backend",
+  ballerchainGithub: "https://github.com/houssem9017/BallerChain-Backend",
+  careerPulseGithub: "https://github.com/houssem9017/Career-Pulse-Frontend",
+  elMakenGithub: "https://github.com/houssem9017/el_maken",
+} as const;
+
 export const websites: Website[] = [
   {
+    id: "secur",
     title: "Secur",
-    url: "https://secur-zeta.vercel.app/",
+    url: projectUrls.secur,
     category: "Sécurité",
     description:
       "A modern security services platform showcasing professional protection solutions with a sleek, responsive design.",
-    image: "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419157/besthrerp/connexion.png",
+    image:
+      "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419157/besthrerp/connexion.png",
     tags: ["Next.js", "Tailwind CSS", "Vercel"],
+    live: true,
   },
   {
+    id: "sun-cuisine",
     title: "Sun Cuisine",
-    url: "https://suncuisine.tn",
+    url: projectUrls.sunCuisine,
     category: "Cuisine",
     description:
       "Tunisian culinary experience platform featuring authentic recipes, catering services, and a vibrant food community.",
-    image: "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419269/noz%20ai/image.png",
+    image:
+      "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419269/noz%20ai/image.png",
     tags: ["Django", "Bootstrap", "PostgreSQL"],
+    live: true,
   },
   {
+    id: "naouar",
     title: "Naouar",
-    url: "https://naouar.vercel.app/",
+    url: projectUrls.naouar,
     category: "Portfolio",
     description:
       "Professional portfolio and business showcase for Naouar, delivering a clean and modern web presence.",
-    image: "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419268/noz%20ai/image_copy_2.png",
+    image:
+      "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419268/noz%20ai/image_copy_2.png",
     tags: ["Next.js", "Framer Motion", "Vercel"],
+    live: true,
   },
   {
+    id: "nexa-store",
     title: "Nexa Store",
-    url: "https://nexa-store.vercel.app/",
+    url: projectUrls.nexaStore,
     category: "E-commerce",
     description:
       "Premium product e-commerce platform for professionals featuring electronics, accessories, and wearables with a complete dashboard.",
     image: "/static/portfolio_app/images/nexa-store/hero.png",
     tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    live: true,
   },
   {
+    id: "cafe-oasis",
     title: "Café Oasis",
-    url: "https://cafe-oasis.vercel.app/",
+    url: projectUrls.cafeOasis,
     category: "Café",
     description:
       "Elegant landing page for a café in Sidi Bou Said, Tunisia, with a refined visual identity and smooth animations.",
     image: "/static/portfolio_app/images/cafe-oasis/hero.png",
     tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    live: true,
   },
   {
+    id: "eclat-prestige",
     title: "Éclat Prestige",
-    url: "https://eclat-prestige.vercel.app/",
+    url: projectUrls.eclatPrestige,
     category: "Beauté",
     description:
       "Beauty salon landing page in Tunis, Tunisia, presenting services, a gallery of work, and booking information in a refined design.",
     image: "/static/portfolio_app/images/eclat-prestige/hero.png",
     tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    live: true,
   },
   {
+    id: "elle-fit",
     title: "Elle Fit Tunis",
-    url: "https://elle-fit.vercel.app/",
+    url: projectUrls.elleFit,
     category: "Fitness",
     description:
       "Women-only fitness gym in Tunis offering yoga, pilates, dance cardio, and gentle weight training in an all-female environment.",
     image: "/static/portfolio_app/images/elle-fit/hero.png",
     tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    live: true,
   },
   {
+    id: "epic-fitness",
     title: "Epic Fitness",
-    url: "https://epic-fitness.vercel.app/",
+    url: projectUrls.epicFitness,
     category: "Fitness",
     description:
       "Modern mixed-gender fitness gym in Tunis with two locations, offering group classes, weight training, and certified coaching.",
     image: "/static/portfolio_app/images/epic-fitness/hero.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    live: true,
   },
   {
+    id: "titan-fitness",
     title: "Titan Fitness",
-    url: "https://titan-fitness.vercel.app/",
+    url: projectUrls.titanFitness,
     category: "Fitness",
     description:
       "Fitness gym in Tunis with an emerald brand theme, offering weight training, cardio, and group classes to help members push their limits.",
     image: "/static/portfolio_app/images/titan-fitness/hero.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    live: true,
   },
   {
+    id: "olympe-gym",
     title: "Olympe Gym",
-    url: "https://olympe-gym.vercel.app/",
+    url: projectUrls.olympeGym,
     category: "Fitness",
     description:
       "Mixed-gender fitness gym in Sousse with two locations, offering group classes, weight training, cardio, and a swimming pool.",
     image: "/static/portfolio_app/images/olympe-gym/hero.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    live: true,
   },
 ];
 
@@ -294,10 +337,8 @@ export const projects: Project[] = [
     description:
       "Node.js server for managing eco-friendly packaging solutions with MongoDB and JWT authentication.",
     tags: ["Node.js", "Express", "MongoDB"],
-    images: [
-      "/static/portfolio_app/images/greentech/greentech2.png",
-    ],
-    github_link: "https://github.com/houssem9017/GreenTech-backend",
+    images: ["/static/portfolio_app/images/greentech/greentech2.png"],
+    github_link: projectUrls.greentechGithub,
   },
   {
     id: 3,
@@ -306,10 +347,8 @@ export const projects: Project[] = [
     description:
       "Blockchain-based fantasy football backend using Web3.js and Ethereum with Ganache.",
     tags: ["Node.js", "Web3.js", "Ethereum"],
-    images: [
-      "/static/portfolio_app/images/ballerchain/ballerchain.png",
-    ],
-    github_link: "https://github.com/houssem9017/BallerChain-Backend",
+    images: ["/static/portfolio_app/images/ballerchain/ballerchain.png"],
+    github_link: projectUrls.ballerchainGithub,
   },
   {
     id: 4,
@@ -318,9 +357,7 @@ export const projects: Project[] = [
     description:
       "SpringBoot web application featuring automated CI/CD pipeline orchestrated by Jenkins.",
     tags: ["SpringBoot", "Jenkins", "Docker"],
-    images: [
-      "/static/portfolio_app/images/devops/jenkins.png",
-    ],
+    images: ["/static/portfolio_app/images/devops/jenkins.png"],
   },
   {
     id: 5,
@@ -329,10 +366,8 @@ export const projects: Project[] = [
     description:
       "MERN stack HR management platform built in 24 hours during a hackathon.",
     tags: ["MongoDB", "Express", "React", "Node.js"],
-    images: [
-      "/static/portfolio_app/images/career_pulse/2.png",
-    ],
-    github_link: "https://github.com/houssem9017/Career-Pulse-Frontend",
+    images: ["/static/portfolio_app/images/career_pulse/2.png"],
+    github_link: projectUrls.careerPulseGithub,
   },
   {
     id: 6,
@@ -341,9 +376,7 @@ export const projects: Project[] = [
     description:
       "Django marketplace for purchasing and selling Fifa coins with payment integration.",
     tags: ["Django", "Stripe", "Coinbase"],
-    images: [
-      "/static/portfolio_app/images/scs/0.png",
-    ],
+    images: ["/static/portfolio_app/images/scs/0.png"],
   },
   {
     id: 1,
@@ -352,9 +385,7 @@ export const projects: Project[] = [
     description:
       "Online platform built in 12 hours showcasing youth club activities and history.",
     tags: ["React", "CSS"],
-    images: [
-      "/static/portfolio_app/images/elmaken/elmaken.png",
-    ],
-    github_link: "https://github.com/houssem9017/el_maken",
+    images: ["/static/portfolio_app/images/elmaken/elmaken.png"],
+    github_link: projectUrls.elMakenGithub,
   },
 ];

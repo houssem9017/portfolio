@@ -28,8 +28,16 @@ export default function Websites() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { t } = useLanguage();
 
-  const desc = (i: number) => t(`websites.item${i + 1}_desc`);
-  const title = (i: number) => t(`websites.item${i + 1}_title`);
+  const desc = (i: number, fallback: string) => {
+    const key = `websites.item${i + 1}_desc`;
+    const value = t(key);
+    return value === key ? fallback : value;
+  };
+  const title = (i: number, fallback: string) => {
+    const key = `websites.item${i + 1}_title`;
+    const value = t(key);
+    return value === key ? fallback : value;
+  };
 
   return (
     <section id="websites" className="py-24 bg-[#0a0f1a] relative overflow-hidden">
@@ -64,48 +72,81 @@ export default function Websites() {
           animate={isInView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 gap-6"
         >
-          {websites.map((site, i) => (
-            <motion.a
-              key={site.url}
-              href={site.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={cardVariants}
-              className="group relative bg-[#111827] border border-[#1f2937] rounded-2xl overflow-hidden hover:border-[#6366f1]/40 transition-all duration-500"
-            >
-              <div className="aspect-video overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#6366f1] text-[#818cf8] text-xs font-semibold tracking-wide">
-                    {site.category}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-xs text-green-500 font-mono">
-                    {t("websites.badge")}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-[#6366f1] transition-colors">
-                  {title(i)}
-                </h3>
-                <p className="text-sm text-[#9ca3af] mb-4 leading-relaxed">
-                  {desc(i)}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {site.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2.5 py-1 rounded-full bg-[#1f2937] text-[#9ca3af] border border-[#374151]"
-                    >
-                      {tag}
+          {websites.map((site, i) => {
+            const isLive = Boolean(site.live && site.url);
+            const cardClassName =
+              "group relative bg-[#111827] border border-[#1f2937] rounded-2xl overflow-hidden hover:border-[#6366f1]/40 transition-all duration-500";
+            const content = (
+              <>
+                <div className="aspect-video overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#6366f1] text-[#818cf8] text-xs font-semibold tracking-wide">
+                      {site.category}
                     </span>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            </motion.a>
-          ))}
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        isLive ? "bg-green-500 animate-pulse" : "bg-[#6b7280]"
+                      }`}
+                    />
+                    <span
+                      className={`text-xs font-mono ${
+                        isLive ? "text-green-500" : "text-[#6b7280]"
+                      }`}
+                    >
+                      {isLive ? t("websites.badge") : t("websites.comingSoon")}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-[#6366f1] transition-colors">
+                    {title(i, site.title)}
+                  </h3>
+                  <p className="text-sm text-[#9ca3af] mb-4 leading-relaxed">
+                    {desc(i, site.description)}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {site.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2.5 py-1 rounded-full bg-[#1f2937] text-[#9ca3af] border border-[#374151]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </>
+            );
+
+            if (isLive && site.url) {
+              return (
+                <motion.a
+                  key={site.id}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${title(i, site.title)} — ${t("websites.badge")}`}
+                  variants={cardVariants}
+                  className={cardClassName}
+                >
+                  {content}
+                </motion.a>
+              );
+            }
+
+            return (
+              <motion.div
+                key={site.id}
+                variants={cardVariants}
+                className={`${cardClassName} opacity-80 cursor-not-allowed`}
+                aria-disabled="true"
+              >
+                {content}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

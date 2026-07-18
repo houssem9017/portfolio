@@ -7,13 +7,13 @@ import HtmlLang from "@/components/HtmlLang";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = buildMetadata("en");
+export const metadata: Metadata = buildMetadata("fr");
 
-export default function EnglishHome() {
+export default function FrenchHome() {
   return (
-    <LanguageProvider locale="en">
-      <HtmlLang locale="en" />
-      <JsonLd locale="en" />
+    <LanguageProvider locale="fr">
+      <HtmlLang locale="fr" />
+      <JsonLd locale="fr" />
       <SmoothScroll>
         <Navbar />
         <HomePage />

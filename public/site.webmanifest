@@ -1,0 +1,23 @@
+{
+  "name": "Houssem Darragi",
+  "short_name": "HD",
+  "description": "Full-stack software engineer specializing in SaaS platforms, automation, web scraping and modern web applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#6366f1",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

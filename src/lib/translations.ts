@@ -11,9 +11,9 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       contact: "Contact",
     },
     hero: {
-      role: "Fullstack Developer",
-      firstName: "Darragi",
-      lastName: "Houssem",
+      role: "Full-Stack Software Engineer",
+      firstName: "Houssem",
+      lastName: "Darragi",
       tagline:
         "Building robust web applications with modern technologies. Specialized in {{tech1}}, {{tech2}}, and {{tech3}}.",
       ctaWork: "View My Work",
@@ -41,6 +41,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       description:
         "Live projects I've built and deployed. Each one represents real-world solutions for clients and businesses.",
       badge: "Live",
+      comingSoon: "Coming soon",
       item1_title: "Secur",
       item1_desc:
         "A modern security services platform showcasing professional protection solutions with a sleek, responsive design.",
@@ -59,6 +60,18 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       item6_title: "Éclat Prestige",
       item6_desc:
         "Beauty salon landing page in Tunis, Tunisia, presenting services, a gallery of work, and booking information in a refined design.",
+      item7_title: "Elle Fit Tunis",
+      item7_desc:
+        "Women-only fitness gym in Tunis offering yoga, pilates, dance cardio, and gentle weight training in an all-female environment.",
+      item8_title: "Epic Fitness",
+      item8_desc:
+        "Modern mixed-gender fitness gym in Tunis with two locations, offering group classes, weight training, and certified coaching.",
+      item9_title: "Titan Fitness",
+      item9_desc:
+        "Fitness gym in Tunis with an emerald brand theme, offering weight training, cardio, and group classes to help members push their limits.",
+      item10_title: "Olympe Gym",
+      item10_desc:
+        "Mixed-gender fitness gym in Sousse with two locations, offering group classes, weight training, cardio, and a swimming pool.",
     },
     projects: {
       heading: "Other Projects",
@@ -95,9 +108,9 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       contact: "Contact",
     },
     hero: {
-      role: "Développeur Fullstack",
-      firstName: "Darragi",
-      lastName: "Houssem",
+      role: "Ingénieur logiciel full-stack",
+      firstName: "Houssem",
+      lastName: "Darragi",
       tagline:
         "Je construis des applications web robustes avec les technologies modernes. Spécialisé en {{tech1}}, {{tech2}} et {{tech3}}.",
       ctaWork: "Voir mon travail",
@@ -125,6 +138,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       description:
         "Des projets en ligne que j'ai construits et déployés. Chacun représente des solutions concrètes pour des clients et entreprises.",
       badge: "En ligne",
+      comingSoon: "Bientôt disponible",
       item1_title: "Secur",
       item1_desc:
         "Une plateforme moderne de services de sécurité présentant des solutions de protection professionnelles avec un design élégant et réactif.",
@@ -143,6 +157,18 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       item6_title: "Éclat Prestige",
       item6_desc:
         "Page d'accueil pour un salon de beauté à Tunis, présentant les services, une galerie de réalisations et une prise de rendez-vous dans un design raffiné.",
+      item7_title: "Elle Fit Tunis",
+      item7_desc:
+        "Salle de fitness exclusivement féminine à Tunis proposant yoga, pilates, cardio-danse et musculation douce dans un environnement 100 % femmes.",
+      item8_title: "Epic Fitness",
+      item8_desc:
+        "Salle de fitness mixte à Tunis avec deux emplacements, offrant cours collectifs, musculation et coaching certifié.",
+      item9_title: "Titan Fitness",
+      item9_desc:
+        "Salle de fitness à Tunis au thème émeraude, offrant musculation, cardio et cours collectifs pour repousser ses limites.",
+      item10_title: "Olympe Gym",
+      item10_desc:
+        "Salle de fitness mixte à Sousse avec deux emplacements, proposant cours collectifs, musculation, cardio et piscine.",
     },
     projects: {
       heading: "Autres projets",
@@ -191,7 +217,7 @@ export function getTranslations(locale: Locale) {
 }
 
 export function getLocaleFromBrowser(): Locale {
-  if (typeof navigator === "undefined") return "fr";
+  if (typeof navigator === "undefined") return "en";
   const lang = navigator.language?.toLowerCase() || "";
   if (lang.startsWith("fr")) return "fr";
   return "en";
