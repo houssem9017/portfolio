@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Houssem Darragi | Full-Stack Engineer";
+export const alt = "Houssem Darragi | Full-Stack Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -56,7 +56,7 @@ export default function OpenGraphImage() {
             marginBottom: 40,
           }}
         >
-          Full-Stack Engineer
+          Full-Stack Software Engineer
         </div>
         <div
           style={{

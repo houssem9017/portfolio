@@ -2,8 +2,14 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { skills } from "@/lib/data";
+import { skillCategories } from "@/lib/data";
 import { useLanguage } from "@/components/LanguageProvider";
+
+const categoryLabels: Record<string, { en: string; fr: string }> = {
+  "Core Technologies": { en: "Core Technologies", fr: "Technologies principales" },
+  "Experienced With": { en: "Experienced With", fr: "Expérimenté avec" },
+  "Additional Experience": { en: "Additional Experience", fr: "Expérience complémentaire" },
+};
 
 export default function Skills() {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,28 +34,34 @@ export default function Skills() {
             {t("skills.description")}
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
-              <div key={skill.name} className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium">{skill.name}</span>
-                  <span className="text-sm text-[#6366f1]">
-                    {skill.percentage}%
-                  </span>
+          <div className="space-y-10">
+            {skillCategories.map((category, catIndex) => (
+              <motion.div
+                key={category.label}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 + catIndex * 0.15 }}
+              >
+                <h3 className="text-lg font-semibold text-[#6366f1] mb-4">
+                  {categoryLabels[category.label]?.en || category.label}
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {category.items.map((skill, skillIndex) => (
+                    <motion.span
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.3 + catIndex * 0.15 + skillIndex * 0.05,
+                      }}
+                      className="px-4 py-2 rounded-full bg-[#111827] border border-[#1f2937] text-sm text-[#d1d5db] hover:border-[#6366f1]/40 hover:text-white transition-all duration-300"
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
                 </div>
-                <div className="h-2 bg-[#1f2937] rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: `${skill.percentage}%` } : {}}
-                    transition={{
-                      duration: 1.2,
-                      delay: 0.2 + index * 0.1,
-                      ease: "easeOut",
-                    }}
-                    className="h-full bg-gradient-to-r from-[#6366f1] to-[#818cf8] rounded-full"
-                  />
-                </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

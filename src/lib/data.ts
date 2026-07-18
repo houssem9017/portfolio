@@ -1,11 +1,14 @@
 export interface Website {
   id: string;
   title: string;
-  url: string | null;
+  slug: string;
+  liveUrl: string | null;
+  caseStudyUrl?: string;
   category: string;
   description: string;
   image: string;
-  tags: string[];
+  technologies: string[];
+  featured: boolean;
   live: boolean;
 }
 
@@ -19,9 +22,9 @@ export interface Project {
   images: string[];
 }
 
-export interface Skill {
-  name: string;
-  percentage: number;
+export interface SkillCategory {
+  label: string;
+  items: string[];
 }
 
 export interface Experience {
@@ -70,125 +73,151 @@ export const websites: Website[] = [
   {
     id: "secur",
     title: "Secur",
-    url: projectUrls.secur,
+    slug: "secur",
+    liveUrl: projectUrls.secur,
     category: "Sécurité",
     description:
       "A modern security services platform showcasing professional protection solutions with a sleek, responsive design.",
     image:
       "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419157/besthrerp/connexion.png",
-    tags: ["Next.js", "Tailwind CSS", "Vercel"],
+    technologies: ["Next.js", "Tailwind CSS", "Vercel"],
+    featured: true,
     live: true,
   },
   {
     id: "sun-cuisine",
     title: "Sun Cuisine",
-    url: projectUrls.sunCuisine,
+    slug: "sun-cuisine",
+    liveUrl: projectUrls.sunCuisine,
     category: "Cuisine",
     description:
       "Tunisian culinary experience platform featuring authentic recipes, catering services, and a vibrant food community.",
     image:
       "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419269/noz%20ai/image.png",
-    tags: ["Django", "Bootstrap", "PostgreSQL"],
+    technologies: ["Django", "Bootstrap", "PostgreSQL"],
+    featured: true,
     live: true,
   },
   {
     id: "naouar",
     title: "Naouar",
-    url: projectUrls.naouar,
+    slug: "naouar",
+    liveUrl: projectUrls.naouar,
     category: "Portfolio",
     description:
       "Professional portfolio and business showcase for Naouar, delivering a clean and modern web presence.",
     image:
       "https://res.cloudinary.com/drjr2cpgn/image/upload/v1754419268/noz%20ai/image_copy_2.png",
-    tags: ["Next.js", "Framer Motion", "Vercel"],
+    technologies: ["Next.js", "Framer Motion", "Vercel"],
+    featured: true,
     live: true,
   },
   {
     id: "nexa-store",
     title: "Nexa Store",
-    url: projectUrls.nexaStore,
+    slug: "nexa-store",
+    liveUrl: projectUrls.nexaStore,
     category: "E-commerce",
     description:
       "Premium product e-commerce platform for professionals featuring electronics, accessories, and wearables with a complete dashboard.",
     image: "/static/portfolio_app/images/nexa-store/hero.png",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
+    featured: true,
     live: true,
   },
   {
     id: "cafe-oasis",
     title: "Café Oasis",
-    url: projectUrls.cafeOasis,
+    slug: "cafe-oasis",
+    liveUrl: projectUrls.cafeOasis,
     category: "Café",
     description:
       "Elegant landing page for a café in Sidi Bou Said, Tunisia, with a refined visual identity and smooth animations.",
     image: "/static/portfolio_app/images/cafe-oasis/hero.png",
-    tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    featured: false,
     live: true,
   },
   {
     id: "eclat-prestige",
     title: "Éclat Prestige",
-    url: projectUrls.eclatPrestige,
+    slug: "eclat-prestige",
+    liveUrl: projectUrls.eclatPrestige,
     category: "Beauté",
     description:
       "Beauty salon landing page in Tunis, Tunisia, presenting services, a gallery of work, and booking information in a refined design.",
     image: "/static/portfolio_app/images/eclat-prestige/hero.png",
-    tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    featured: true,
     live: true,
   },
   {
     id: "elle-fit",
     title: "Elle Fit Tunis",
-    url: projectUrls.elleFit,
+    slug: "elle-fit",
+    liveUrl: projectUrls.elleFit,
     category: "Fitness",
     description:
       "Women-only fitness gym in Tunis offering yoga, pilates, dance cardio, and gentle weight training in an all-female environment.",
     image: "/static/portfolio_app/images/elle-fit/hero.png",
-    tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    featured: false,
     live: true,
   },
   {
     id: "epic-fitness",
     title: "Epic Fitness",
-    url: projectUrls.epicFitness,
+    slug: "epic-fitness",
+    liveUrl: projectUrls.epicFitness,
     category: "Fitness",
     description:
       "Modern mixed-gender fitness gym in Tunis with two locations, offering group classes, weight training, and certified coaching.",
     image: "/static/portfolio_app/images/epic-fitness/hero.png",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    featured: false,
     live: true,
   },
   {
     id: "titan-fitness",
     title: "Titan Fitness",
-    url: projectUrls.titanFitness,
+    slug: "titan-fitness",
+    liveUrl: projectUrls.titanFitness,
     category: "Fitness",
     description:
       "Fitness gym in Tunis with an emerald brand theme, offering weight training, cardio, and group classes to help members push their limits.",
     image: "/static/portfolio_app/images/titan-fitness/hero.png",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    featured: true,
     live: true,
   },
   {
     id: "olympe-gym",
     title: "Olympe Gym",
-    url: projectUrls.olympeGym,
+    slug: "olympe-gym",
+    liveUrl: projectUrls.olympeGym,
     category: "Fitness",
     description:
       "Mixed-gender fitness gym in Sousse with two locations, offering group classes, weight training, cardio, and a swimming pool.",
     image: "/static/portfolio_app/images/olympe-gym/hero.png",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    featured: false,
     live: true,
   },
 ];
 
-export const skills: Skill[] = [
-  { name: "Django", percentage: 95 },
-  { name: "Angular", percentage: 90 },
-  { name: "Node.js", percentage: 90 },
-  { name: "Next.js", percentage: 85 },
-  { name: "Framer Motion", percentage: 85 },
-  { name: "Git", percentage: 85 },
+export const skillCategories: SkillCategory[] = [
+  {
+    label: "Core Technologies",
+    items: ["Django", "Next.js", "Angular", "Node.js", "Python", "TypeScript", "JavaScript"],
+  },
+  {
+    label: "Experienced With",
+    items: ["PostgreSQL", "MongoDB", "Git", "REST APIs", "Framer Motion", "Tailwind CSS"],
+  },
+  {
+    label: "Additional Experience",
+    items: ["React", "Docker", "CI/CD", "Web Scraping", "Linux", "GraphQL", "Firebase", "AWS", "Vercel", "HTML/CSS"],
+  },
 ];
 
 export const experiences: Experience[] = [
@@ -196,7 +225,7 @@ export const experiences: Experience[] = [
     role: "Web Developer",
     company: "Bestlog Technology",
     companyUrl: "https://www.bestlogtechnology.com/",
-    period: "Nov 2024 - Present",
+    period: "Nov 2024 – Present",
     details: [
       "Enhanced project and absence management platform (Django, Angular)",
       "Developed work cycle planning and holiday calendars with API integration",
@@ -208,7 +237,7 @@ export const experiences: Experience[] = [
     role: "End of Study Intern",
     company: "Bestlog Technology",
     companyUrl: "https://www.bestlogtechnology.com/",
-    period: "Feb 2024 - Jul 2024",
+    period: "Feb 2024 – Jul 2024",
     details: [
       "Developed a project and absence management platform (Django, Angular)",
       "Implemented task traceability and automated workflows",
@@ -219,7 +248,7 @@ export const experiences: Experience[] = [
     role: "Intern",
     company: "GreenTech, Germany",
     companyUrl: "https://www.greentech.fr/en/",
-    period: "Jul 2023 - Oct 2023",
+    period: "Jul 2023 – Oct 2023",
     details: [
       "Implemented a database structure using MongoDB",
       "Developed backend services using Node.js",
@@ -229,7 +258,7 @@ export const experiences: Experience[] = [
   {
     role: "Intern",
     company: "B2B Technology",
-    period: "Jul 2022 - Sep 2022",
+    period: "Jul 2022 – Sep 2022",
     details: [
       "Designed database structures using MySQL",
       "Developed a user-friendly website interface using Django",
@@ -240,7 +269,7 @@ export const experiences: Experience[] = [
     role: "Intern",
     company: "Wide Web Words",
     companyUrl: "https://www.linkedin.com/company/wide-web-words",
-    period: "Jul 2021 - Aug 2021",
+    period: "Jul 2021 – Aug 2021",
     details: [
       "Developed web features using PHP",
       "Maintained and optimized a WordPress website",
@@ -254,7 +283,7 @@ export const education: Education[] = [
     degree: "Computer Science Engineer",
     school: "Esprit: Private School of Engineering and Technologies",
     schoolUrl: "https://esprit.tn/",
-    period: "09/2019 - 10/2024",
+    period: "Sep 2019 – Oct 2024",
     description: "Focused on web and mobile development.",
   },
 ];

@@ -12,7 +12,7 @@ export default function About() {
 
   const stats = [
     { value: "5", label: t("about.stats_podiums"), subtitle: t("about.stats_podiums_detail") },
-    { value: "4", label: t("about.stats_hackathons") },
+    { label: t("about.stats_engineer_label"), subtitle: t("about.stats_engineer_detail") },
   ];
 
   return (
@@ -43,11 +43,13 @@ export default function About() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                  className="bg-[#111827] border border-[#1f2937] rounded-2xl p-6 text-center hover:border-[#6366f1]/30 transition-colors"
+                  className="bg-[#111827] border border-[#1f2937] rounded-2xl p-4 text-center hover:border-[#6366f1]/30 transition-colors"
                 >
-                  <div className="text-2xl sm:text-3xl font-bold text-[#6366f1] mb-1">
-                    {stat.value}
-                  </div>
+                  {"value" in stat && stat.value && (
+                    <div className="text-2xl sm:text-3xl font-bold text-[#6366f1] mb-1">
+                      {stat.value}
+                    </div>
+                  )}
                   <div className="text-sm text-[#9ca3af]">{stat.label}</div>
                   {stat.subtitle && (
                     <div className="text-xs text-[#6b7280] mt-1">{stat.subtitle}</div>

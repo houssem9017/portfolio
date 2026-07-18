@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { siteConfig, absoluteUrl, type SiteLocale } from "@/lib/site";
 
-export function buildMetadata(locale: SiteLocale): Metadata {
+export function buildMetadata(locale: SiteLocale, path = ""): Metadata {
   const title = siteConfig.title[locale];
   const description = siteConfig.description[locale];
-  const canonical = locale === "fr" ? absoluteUrl("/fr") : absoluteUrl("/");
+  const basePath = locale === "fr" ? "/fr" : "/";
+  const canonical = path ? absoluteUrl(`${basePath}${path}`) : absoluteUrl(basePath);
   const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
   const altLocale = locale === "fr" ? "en_US" : "fr_FR";
 

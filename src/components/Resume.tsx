@@ -21,7 +21,7 @@ function TimelineItem({
       initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative pl-8 pb-8 border-l border-[#1f2937] last:pb-0"
+      className="relative pl-8 pb-10 border-l border-[#1f2937] last:pb-0"
     >
       <div className="absolute left-0 top-0 w-3 h-3 -translate-x-[6.5px] rounded-full bg-[#6366f1] border-2 border-[#030712]" />
       {children}
@@ -46,7 +46,16 @@ export default function Resume() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-2">
             {t("resume.heading")}
           </h2>
-          <div className="w-20 h-1 bg-[#6366f1] rounded-full mb-12" />
+          <div className="w-20 h-1 bg-[#6366f1] rounded-full mb-8" />
+
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-2.5 bg-[#6366f1] hover:bg-[#4f46e5] text-white rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 active:scale-95 mb-12"
+          >
+            {t("resume.download")}
+          </a>
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
@@ -75,7 +84,7 @@ export default function Resume() {
                       `@${exp.company}`
                     )}
                   </p>
-                  <ul className="space-y-1">
+                  <ul className="space-y-2">
                     {exp.details.map((detail, j) => (
                       <li
                         key={j}

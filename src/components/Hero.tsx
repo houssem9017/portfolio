@@ -100,10 +100,12 @@ export default function Hero() {
             {t("hero.ctaWork")}
           </a>
           <a
-            href="#contact"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3 border border-[#1f2937] hover:border-[#6366f1]/50 text-[#9ca3af] hover:text-white rounded-full font-medium transition-all duration-200"
           >
-            {t("hero.ctaContact")}
+            {t("hero.ctaResume")}
           </a>
         </div>
       </div>

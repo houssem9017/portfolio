@@ -9,7 +9,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.6 },
+    transition: { staggerChildren: 0.4 },
   },
 };
 
@@ -23,12 +23,10 @@ const cardVariants = {
   },
 };
 
-export default function Websites() {
+export default function WebsitesPage() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { t, locale } = useLanguage();
-
-  const featured = websites.filter((w) => w.featured);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const { t } = useLanguage();
 
   const desc = (i: number, fallback: string) => {
     const key = `websites.item${i + 1}_desc`;
@@ -42,11 +40,8 @@ export default function Websites() {
   };
 
   return (
-    <section id="websites" className="py-24 bg-[#0a0f1a] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#6366f1]/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#818cf8]/5 rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+    <section className="pt-32 pb-24 bg-[#0a0f1a] min-h-screen">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 60 }}
@@ -59,12 +54,12 @@ export default function Websites() {
               {t("websites.label")}
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-2">
-            {t("websites.heading")}
-          </h2>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-2">
+            {t("websites.allHeading")}
+          </h1>
           <div className="w-20 h-1 bg-[#6366f1] rounded-full mb-4" />
           <p className="text-[#9ca3af] mb-12 max-w-2xl">
-            {t("websites.description")}
+            {t("websites.allDescription")}
           </p>
         </motion.div>
 
@@ -74,8 +69,7 @@ export default function Websites() {
           animate={isInView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 gap-6"
         >
-          {featured.map((site, i) => {
-            const globalIndex = websites.indexOf(site);
+          {websites.map((site, i) => {
             const isLive = Boolean(site.live && site.liveUrl);
             const cardClassName =
               "group relative bg-[#111827] border border-[#1f2937] rounded-2xl overflow-hidden hover:border-[#6366f1]/40 transition-all duration-500";
@@ -104,10 +98,10 @@ export default function Websites() {
                     </span>
                   </div>
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-[#6366f1] transition-colors">
-                    {title(globalIndex, site.title)}
+                    {title(i, site.title)}
                   </h3>
                   <p className="text-sm text-[#9ca3af] mb-4 leading-relaxed">
-                    {desc(globalIndex, site.description)}
+                    {desc(i, site.description)}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {site.technologies.map((tag) => (
@@ -130,7 +124,7 @@ export default function Websites() {
                   href={site.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${title(globalIndex, site.title)} — ${t("websites.badge")}`}
+                  aria-label={`${title(i, site.title)} — ${t("websites.badge")}`}
                   variants={cardVariants}
                   className={cardClassName}
                 >
@@ -150,20 +144,6 @@ export default function Websites() {
               </motion.div>
             );
           })}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-10 text-center"
-        >
-          <a
-            href={locale === "fr" ? "/fr/websites" : "/websites"}
-            className="inline-block px-8 py-3 border border-[#1f2937] hover:border-[#6366f1]/50 text-[#9ca3af] hover:text-white rounded-full font-medium transition-all duration-200"
-          >
-            {t("websites.viewAll")}
-          </a>
         </motion.div>
       </div>
     </section>

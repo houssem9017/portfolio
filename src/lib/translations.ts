@@ -11,27 +11,32 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       contact: "Contact",
     },
     hero: {
-      role: "Full-Stack Engineer",
+      role: "Full-Stack Software Engineer",
       firstName: "Houssem",
       lastName: "Darragi",
       tagline:
-        "Building robust web applications with modern technologies. Specialized in {{tech1}}, {{tech2}}, and {{tech3}}.",
-      ctaWork: "View My Work",
-      ctaContact: "Get In Touch",
+        "I build robust web applications, SaaS platforms and automation systems using Django, Next.js and Angular.",
+      ctaWork: "View my work",
+      ctaResume: "Download résumé",
+      ctaContact: "Contact me",
     },
     about: {
       heading: "About Me",
       stats_podiums: "Hackathon Podiums",
       stats_podiums_detail: "4 wins · 1 runner-up",
-      stats_hackathons: "Hackathons Won",
+      stats_engineer_label: "Full-Stack Engineer",
+      stats_engineer_detail: "Django · Next.js · Angular",
       p1: "I'm a Full-Stack Software Engineer specialized in building robust web applications using Django, Next.js, and Angular. My work spans backend architecture, frontend interfaces, and API integrations.",
-      p2: "I have been building web applications through professional roles, internships, hackathons and personal projects since my engineering studies. I thrive in fast-paced environments, combining problem-solving skills with a focus on clean, maintainable code.",
+      p2: "I started my career in November 2024, but I've been building web applications through internships, hackathons, and personal projects since my engineering studies. I thrive in fast-paced environments, combining problem-solving skills with a focus on clean, maintainable code.",
       p3: "Proficient in Python (Django), JavaScript/TypeScript (Node.js, Next.js, Angular), and Framer Motion. Skilled in Git workflows, relational and NoSQL databases. Fluent in English and French.",
     },
     skills: {
       heading: "Skills & Expertise",
       description:
         "My project experience in multiple languages showcases my rapid adaptability and eagerness to learn, enabling me to thrive in evolving tech environments.",
+      core: "Core Technologies",
+      experienced: "Experienced With",
+      additional: "Additional Experience",
     },
     websites: {
       label: "Live Websites",
@@ -40,6 +45,9 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
         "Live projects I've built and deployed. Each one represents real-world solutions for clients and businesses.",
       badge: "Live",
       comingSoon: "Coming soon",
+      viewAll: "View all websites",
+      allHeading: "All Websites",
+      allDescription: "A complete collection of websites I've built and deployed for clients and businesses.",
       item1_title: "Secur",
       item1_desc:
         "A modern security services platform showcasing professional protection solutions with a sleek, responsive design.",
@@ -84,6 +92,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       experience: "Experience",
       education: "Education",
       achievements: "Achievements",
+      download: "Download résumé",
     },
     contact: {
       heading: "Get In Touch",
@@ -106,27 +115,32 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       contact: "Contact",
     },
     hero: {
-      role: "Ingénieur full-stack",
+      role: "Ingénieur logiciel full-stack",
       firstName: "Houssem",
       lastName: "Darragi",
       tagline:
-        "Je construis des applications web robustes avec les technologies modernes. Spécialisé en {{tech1}}, {{tech2}} et {{tech3}}.",
+        "Je développe des applications web robustes, des plateformes SaaS et des systèmes d'automatisation avec Django, Next.js et Angular.",
       ctaWork: "Voir mon travail",
+      ctaResume: "Télécharger mon CV",
       ctaContact: "Me contacter",
     },
     about: {
       heading: "À propos de moi",
       stats_podiums: "Podiums en hackathon",
       stats_podiums_detail: "4 victoires · 1 2e place",
-      stats_hackathons: "Hackathons remportés",
+      stats_engineer_label: "Ingénieur full-stack",
+      stats_engineer_detail: "Django · Next.js · Angular",
       p1: "Je suis un ingénieur logiciel full-stack spécialisé dans la création d'applications web robustes avec Django, Next.js et Angular. Mon travail couvre l'architecture backend, les interfaces frontend et les intégrations d'API.",
-      p2: "Je construis des applications web depuis mes études d'ingénieur, à travers des postes professionnels, des stages, des hackathons et des projets personnels. Je m'épanouis dans des environnements dynamiques, combinant résolution de problèmes et code propre et maintenable.",
+      p2: "J'ai commencé ma carrière en novembre 2024, mais je développe des applications web depuis mes études d'ingénieur, à travers des stages, des hackathons et des projets personnels. Je m'épanouis dans des environnements dynamiques, combinant résolution de problèmes et code propre et maintenable.",
       p3: "Compétent en Python (Django), JavaScript/TypeScript (Node.js, Next.js, Angular) et Framer Motion. Expérimenté avec Git, les bases de données relationnelles et NoSQL. Parlant couramment anglais et français.",
     },
     skills: {
       heading: "Compétences & Expertise",
       description:
         "Mon expérience de projet dans plusieurs langages démontre ma rapidité d'adaptation et ma soif d'apprendre, me permettant de prospérer dans des environnements technologiques en évolution.",
+      core: "Technologies principales",
+      experienced: "Expérimenté avec",
+      additional: "Expérience complémentaire",
     },
     websites: {
       label: "Sites en ligne",
@@ -135,6 +149,9 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
         "Des projets en ligne que j'ai construits et déployés. Chacun représente des solutions concrètes pour des clients et entreprises.",
       badge: "En ligne",
       comingSoon: "Bientôt disponible",
+      viewAll: "Voir tous les sites",
+      allHeading: "Tous les sites",
+      allDescription: "Une collection complète de sites que j'ai construits et déployés pour des clients et entreprises.",
       item1_title: "Secur",
       item1_desc:
         "Une plateforme moderne de services de sécurité présentant des solutions de protection professionnelles avec un design élégant et réactif.",
@@ -179,6 +196,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       experience: "Expérience",
       education: "Formation",
       achievements: "Réalisations",
+      download: "Télécharger mon CV",
     },
     contact: {
       heading: "Me contacter",

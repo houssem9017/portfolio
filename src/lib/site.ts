@@ -10,8 +10,8 @@ export const siteConfig = {
     fr: "Ingénieur full-stack spécialisé dans les plateformes SaaS, l'automatisation, le web scraping et les applications web modernes avec Django, Next.js et Angular.",
   },
   role: {
-    en: "Full-Stack Engineer",
-    fr: "Ingénieur full-stack",
+    en: "Full-Stack Software Engineer",
+    fr: "Ingénieur logiciel full-stack",
   },
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://houssemdarragi.com").replace(
     /\/$/,
