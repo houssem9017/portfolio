@@ -11,7 +11,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       contact: "Contact",
     },
     hero: {
-      role: "Full-Stack Software Engineer",
+      role: "Full-Stack Engineer",
       firstName: "Houssem",
       lastName: "Darragi",
       tagline:
@@ -21,13 +21,11 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
     },
     about: {
       heading: "About Me",
-      stats_experience: "Experience",
-      stats_experience_value: "4+ Years",
-      stats_projects: "Projects",
+      stats_podiums: "Hackathon Podiums",
+      stats_podiums_detail: "4 wins · 1 runner-up",
       stats_hackathons: "Hackathons Won",
-      stats_clients: "Clients",
-      p1: "I'm a Fullstack Developer specialized in building robust web applications using Django and Angular. My experience spans backend architecture, frontend interfaces, and API integrations.",
-      p2: "With a solid foundation from academic projects, internships, and hackathons, I deliver efficient and scalable solutions. I thrive in fast-paced environments, combining problem-solving skills with a focus on clean, maintainable code.",
+      p1: "I'm a Full-Stack Software Engineer specialized in building robust web applications using Django, Next.js, and Angular. My work spans backend architecture, frontend interfaces, and API integrations.",
+      p2: "I have been building web applications through professional roles, internships, hackathons and personal projects since my engineering studies. I thrive in fast-paced environments, combining problem-solving skills with a focus on clean, maintainable code.",
       p3: "Proficient in Python (Django), JavaScript/TypeScript (Node.js, Next.js, Angular), and Framer Motion. Skilled in Git workflows, relational and NoSQL databases. Fluent in English and French.",
     },
     skills: {
@@ -108,7 +106,7 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
       contact: "Contact",
     },
     hero: {
-      role: "Ingénieur logiciel full-stack",
+      role: "Ingénieur full-stack",
       firstName: "Houssem",
       lastName: "Darragi",
       tagline:
@@ -118,13 +116,11 @@ const translations: Record<Locale, Record<string, Record<string, string>>> = {
     },
     about: {
       heading: "À propos de moi",
-      stats_experience: "Expérience",
-      stats_experience_value: "4+ Années",
-      stats_projects: "Projets",
-      stats_hackathons: "Hackathons gagnés",
-      stats_clients: "Clients",
-      p1: "Je suis un développeur Fullstack spécialisé dans la création d'applications web robustes avec Django et Angular. Mon expérience couvre l'architecture backend, les interfaces frontend et les intégrations d'API.",
-      p2: "Avec une base solide issue de projets académiques, de stages et de hackathons, je fournis des solutions efficaces et évolutives. Je m'épanouis dans des environnements dynamiques, combinant des compétences en résolution de problèmes avec un accent sur un code propre et maintenable.",
+      stats_podiums: "Podiums en hackathon",
+      stats_podiums_detail: "4 victoires · 1 2e place",
+      stats_hackathons: "Hackathons remportés",
+      p1: "Je suis un ingénieur logiciel full-stack spécialisé dans la création d'applications web robustes avec Django, Next.js et Angular. Mon travail couvre l'architecture backend, les interfaces frontend et les intégrations d'API.",
+      p2: "Je construis des applications web depuis mes études d'ingénieur, à travers des postes professionnels, des stages, des hackathons et des projets personnels. Je m'épanouis dans des environnements dynamiques, combinant résolution de problèmes et code propre et maintenable.",
       p3: "Compétent en Python (Django), JavaScript/TypeScript (Node.js, Next.js, Angular) et Framer Motion. Expérimenté avec Git, les bases de données relationnelles et NoSQL. Parlant couramment anglais et français.",
     },
     skills: {

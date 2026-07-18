@@ -11,8 +11,8 @@ export default function About() {
   const { t } = useLanguage();
 
   const stats = [
-    { label: t("about.stats_experience"), value: t("about.stats_experience_value") },
-    { label: t("about.stats_hackathons"), value: "5" },
+    { value: "5", label: t("about.stats_podiums"), subtitle: t("about.stats_podiums_detail") },
+    { value: "4", label: t("about.stats_hackathons") },
   ];
 
   return (
@@ -49,6 +49,9 @@ export default function About() {
                     {stat.value}
                   </div>
                   <div className="text-sm text-[#9ca3af]">{stat.label}</div>
+                  {stat.subtitle && (
+                    <div className="text-xs text-[#6b7280] mt-1">{stat.subtitle}</div>
+                  )}
                 </motion.div>
               ))}
             </div>

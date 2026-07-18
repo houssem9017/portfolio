@@ -2,16 +2,16 @@ export const siteConfig = {
   name: "Houssem Darragi",
   shortName: "HD",
   title: {
-    en: "Houssem Darragi | Full-Stack Software Engineer",
-    fr: "Houssem Darragi | Ingénieur logiciel full-stack",
+    en: "Houssem Darragi | Full-Stack Engineer",
+    fr: "Houssem Darragi | Ingénieur full-stack",
   },
   description: {
-    en: "Full-stack software engineer specializing in SaaS platforms, automation, web scraping and modern web applications using Django, Next.js and Angular.",
-    fr: "Ingénieur logiciel full-stack spécialisé dans les plateformes SaaS, l'automatisation, le web scraping et les applications web modernes avec Django, Next.js et Angular.",
+    en: "Full-stack engineer specializing in SaaS platforms, automation, web scraping and modern web applications using Django, Next.js and Angular.",
+    fr: "Ingénieur full-stack spécialisé dans les plateformes SaaS, l'automatisation, le web scraping et les applications web modernes avec Django, Next.js et Angular.",
   },
   role: {
-    en: "Full-Stack Software Engineer",
-    fr: "Ingénieur logiciel full-stack",
+    en: "Full-Stack Engineer",
+    fr: "Ingénieur full-stack",
   },
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://houssemdarragi.com").replace(
     /\/$/,
