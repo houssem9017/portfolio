@@ -94,16 +94,18 @@ export default function Hero() {
 
         <div ref={ctaRef} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#work"
+            href="#websites"
             className="px-8 py-3 bg-[#6366f1] hover:bg-[#4f46e5] text-white rounded-full font-medium transition-all duration-200 hover:scale-105 active:scale-95"
           >
             {t("hero.ctaWork")}
           </a>
           <a
-            href="#experience"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3 border border-[#1f2937] hover:border-[#6366f1]/50 text-[#9ca3af] hover:text-white rounded-full font-medium transition-all duration-200"
           >
-            {t("hero.ctaResume")} <span className="ml-1 text-xs text-[#a5adbd]">(TODO: add PDF)</span>
+            {t("hero.ctaResume")}
           </a>
         </div>
       </div>

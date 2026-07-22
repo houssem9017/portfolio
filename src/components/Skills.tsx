@@ -6,16 +6,15 @@ import { skillCategories } from "@/lib/data";
 import { useLanguage } from "@/components/LanguageProvider";
 
 const categoryLabels: Record<string, { en: string; fr: string }> = {
-  "Core engineering": { en: "Core engineering", fr: "Ingénierie logicielle" },
-  "Architecture and backend": { en: "Architecture and backend", fr: "Architecture et backend" },
-  "Delivery and infrastructure": { en: "Delivery and infrastructure", fr: "Delivery et infrastructure" },
-  "Product and frontend": { en: "Product and frontend", fr: "Produit et frontend" },
+  "Core Technologies": { en: "Core Technologies", fr: "Technologies principales" },
+  "Experienced With": { en: "Experienced With", fr: "Expérimenté avec" },
+  "Additional Experience": { en: "Additional Experience", fr: "Expérience complémentaire" },
 };
 
 export default function Skills() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section id="skills" className="py-24 bg-[#0a0f1a] relative">
@@ -44,7 +43,7 @@ export default function Skills() {
                 transition={{ duration: 0.6, delay: 0.2 + catIndex * 0.15 }}
               >
                 <h3 className="text-lg font-semibold text-[#6366f1] mb-4">
-            {categoryLabels[category.label]?.[locale] || category.label}
+                  {categoryLabels[category.label]?.en || category.label}
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {category.items.map((skill, skillIndex) => (

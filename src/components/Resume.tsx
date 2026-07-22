@@ -1,61 +1,167 @@
 "use client";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { experiences, education, achievements } from "@/lib/data";
 import { useLanguage } from "@/components/LanguageProvider";
-import SectionHeading from "@/components/SectionHeading";
 
-function ExperienceList({ full = false }: { full?: boolean }) {
-  const items = full ? experiences : experiences.slice(0, 3);
+function TimelineItem({
+  children,
+  index,
+}: {
+  children: React.ReactNode;
+  index: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
   return (
-    <div className="space-y-6">
-      {items.map((experience) => (
-        <article key={`${experience.company}-${experience.period}`} className="border-l border-[#303b52] pl-5">
-          <p className="font-mono text-xs text-[#818cf8]">{experience.period}</p>
-          <h3 className="mt-1 text-base font-semibold text-white">{experience.role}</h3>
-          <p className="mt-1 text-sm text-[#a5adbd]">{experience.company}</p>
-          {full ? (
-            <ul className="mt-3 space-y-2">
-              {experience.details.map((detail) => <li key={detail} className="text-sm leading-6 text-[#8792a7]">{detail}</li>)}
-            </ul>
-          ) : null}
-        </article>
-      ))}
-    </div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="relative pl-8 pb-10 border-l border-[#1f2937] last:pb-0"
+    >
+      <div className="absolute left-0 top-0 w-3 h-3 -translate-x-[6.5px] rounded-full bg-[#6366f1] border-2 border-[#030712]" />
+      {children}
+    </motion.div>
   );
 }
 
 export default function Resume() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { t } = useLanguage();
+
   return (
-    <section id="experience" className="scroll-mt-20 border-t border-[#151e2d] py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading title={t("resume.heading")} description={t("resume.summary")} />
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-[#818cf8]">{t("resume.currentRole")}</p>
-            <ExperienceList />
-            <details className="mt-8 rounded-2xl border border-[#263044] bg-[#0d1422] p-5">
-              <summary className="cursor-pointer text-sm font-medium text-[#d4dcf0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#818cf8]">{t("resume.viewFull")}</summary>
-              <div className="mt-6"><ExperienceList full /></div>
-            </details>
-          </div>
-          <div className="space-y-8">
-            <section>
-              <h3 className="text-lg font-semibold text-white">{t("resume.education")}</h3>
-              {education.slice(0, 1).map((item) => <article key={item.school} className="mt-4 border-l border-[#303b52] pl-5"><p className="font-mono text-xs text-[#818cf8]">{item.period}</p><h4 className="mt-1 text-base font-semibold text-white">{item.degree}</h4><p className="mt-1 text-sm leading-6 text-[#a5adbd]">{item.school}</p><p className="mt-1 text-sm text-[#8792a7]">{item.description}</p></article>)}
-            </section>
-            <section>
-              <h3 className="text-lg font-semibold text-white">{t("resume.selectedAchievements")}</h3>
-              <ul className="mt-4 space-y-4">
-                {achievements.slice(0, 4).map((item) => <li key={item.title} className="text-sm leading-6 text-[#a5adbd]"><span className="font-mono text-xs text-[#818cf8]">{item.date}</span><br /><span className="font-medium text-[#d4dcf0]">{item.title}</span></li>)}
-              </ul>
-            </section>
-            <div className="rounded-2xl border border-dashed border-[#4b5563] bg-[#0d1422] p-5 text-sm text-[#8792a7]">
-              <p className="font-mono text-xs text-[#818cf8]">TODO_RESUME_PDF_URL</p>
-              <p className="mt-2">{t("resume.download")}: add the verified public PDF when available.</p>
+    <section id="resume" className="py-24 relative">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 60 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+            {t("resume.heading")}
+          </h2>
+          <div className="w-20 h-1 bg-[#6366f1] rounded-full mb-8" />
+
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-2.5 bg-[#6366f1] hover:bg-[#4f46e5] text-white rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 active:scale-95 mb-12"
+          >
+            {t("resume.download")}
+          </a>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-xl font-semibold mb-6 text-[#6366f1]">
+                {t("resume.experience")}
+              </h3>
+              {experiences.map((exp, i) => (
+                <TimelineItem key={i} index={i}>
+                  <span className="text-xs text-[#6366f1] font-mono">
+                    {exp.period}
+                  </span>
+                  <h4 className="text-base font-semibold mt-1">
+                    {exp.role}
+                  </h4>
+                  <p className="text-sm text-[#9ca3af] mb-2">
+                    {exp.companyUrl ? (
+                      <a
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-[#6366f1] transition-colors"
+                      >
+                        @{exp.company}
+                      </a>
+                    ) : (
+                      `@${exp.company}`
+                    )}
+                  </p>
+                  <ul className="space-y-2">
+                    {exp.details.map((detail, j) => (
+                      <li
+                        key={j}
+                        className="text-sm text-[#9ca3af] flex items-start gap-2"
+                      >
+                        <span className="text-[#6366f1] mt-1.5 w-1 h-1 rounded-full bg-current shrink-0" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </TimelineItem>
+              ))}
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-6 text-[#6366f1]">
+                {t("resume.education")}
+              </h3>
+              {education.map((edu, i) => (
+                <TimelineItem key={i} index={i}>
+                  <span className="text-xs text-[#6366f1] font-mono">
+                    {edu.period}
+                  </span>
+                  <h4 className="text-base font-semibold mt-1">
+                    {edu.degree}
+                  </h4>
+                  <p className="text-sm text-[#9ca3af]">
+                    {edu.schoolUrl ? (
+                      <a
+                        href={edu.schoolUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-[#6366f1] transition-colors"
+                      >
+                        {edu.school}
+                      </a>
+                    ) : (
+                      edu.school
+                    )}
+                  </p>
+                  <p className="text-sm text-[#6b7280] mt-1">
+                    {edu.description}
+                  </p>
+                </TimelineItem>
+              ))}
+
+              <h3 className="text-xl font-semibold mb-6 mt-8 text-[#6366f1]">
+                {t("resume.achievements")}
+              </h3>
+              {achievements.map((ach, i) => (
+                <TimelineItem key={i} index={i + education.length}>
+                  <span className="text-xs text-[#6366f1] font-mono">
+                    {ach.date}
+                  </span>
+                  <h4 className="text-base font-semibold mt-1">
+                    {ach.title}
+                  </h4>
+                  {ach.eventUrl ? (
+                    <a
+                      href={ach.eventUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-[#9ca3af] hover:text-[#6366f1] transition-colors"
+                    >
+                      {ach.event}
+                    </a>
+                  ) : ach.event ? (
+                    <p className="text-sm text-[#9ca3af]">{ach.event}</p>
+                  ) : null}
+                  <p className="text-sm text-[#6b7280] mt-1">
+                    {ach.description}
+                  </p>
+                </TimelineItem>
+              ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
