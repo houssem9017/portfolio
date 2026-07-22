@@ -1,16 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/components/LanguageProvider";
 import { motion } from "framer-motion";
 
 export default function LanguageSwitcher() {
   const { locale } = useLanguage();
+  const pathname = usePathname();
 
   return (
     <div className="flex items-center gap-1 bg-[#1f2937] rounded-full p-0.5">
       {(["en", "fr"] as const).map((lang) => {
-        const href = lang === "fr" ? "/fr" : "/";
+        const englishPath = pathname?.startsWith("/fr") ? pathname.replace(/^\/fr/, "") || "/" : pathname || "/";
+        const href = lang === "fr" ? (englishPath === "/" ? "/fr" : `/fr${englishPath}`) : englishPath;
         const active = locale === lang;
         return (
           <Link

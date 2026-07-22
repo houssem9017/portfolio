@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site";
+import { portfolioProjects } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  return [
+  const roots: MetadataRoute.Sitemap = [
     {
       url: absoluteUrl("/"),
       lastModified,
@@ -31,4 +32,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
   ];
+  const projectRoutes = portfolioProjects.filter((project) => project.featured).flatMap((project) => {
+    const en = absoluteUrl(`/work/${project.slug}`);
+    const fr = absoluteUrl(`/fr/work/${project.slug}`);
+    return [
+      { url: en, lastModified, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: { en, fr, "x-default": en } } },
+      { url: fr, lastModified, changeFrequency: "monthly" as const, priority: 0.75, alternates: { languages: { en, fr, "x-default": en } } },
+    ];
+  });
+  return [...roots, ...projectRoutes];
 }

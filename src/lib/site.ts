@@ -2,12 +2,12 @@ export const siteConfig = {
   name: "Houssem Darragi",
   shortName: "HD",
   title: {
-    en: "Houssem Darragi | Full-Stack Engineer",
-    fr: "Houssem Darragi | Ingénieur full-stack",
+    en: "Houssem Darragi — Full-Stack Software Engineer",
+    fr: "Houssem Darragi — Ingénieur logiciel Full-Stack",
   },
   description: {
-    en: "Full-stack engineer specializing in SaaS platforms, automation, web scraping and modern web applications using Django, Next.js and Angular.",
-    fr: "Ingénieur full-stack spécialisé dans les plateformes SaaS, l'automatisation, le web scraping et les applications web modernes avec Django, Next.js et Angular.",
+    en: "Full-stack software engineer building business platforms, SaaS products, automation systems, developer tools, and modern web experiences with Django, Next.js, and Angular.",
+    fr: "Ingénieur logiciel full-stack spécialisé dans les plateformes métier, les produits SaaS, les systèmes d’automatisation, les outils pour développeurs et les expériences web modernes.",
   },
   role: {
     en: "Full-Stack Software Engineer",
@@ -21,6 +21,7 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_CONTACT_EMAIL || "houssem@houssemdarragi.com",
   phone: "+21692406973",
   phoneDisplay: "(+216) 92406973",
+  location: "Tunisia",
   social: {
     linkedin: "https://www.linkedin.com/in/houssem-darragi/",
     linkedinHandle: "houssem-darragi",

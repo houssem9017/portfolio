@@ -6,11 +6,9 @@ import { useLanguage } from "@/components/LanguageProvider";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const navLinks = [
+  { href: "#work", key: "websites" },
+  { href: "#experience", key: "resume" },
   { href: "#about", key: "about" },
-  { href: "#skills", key: "skills" },
-  { href: "#resume", key: "resume" },
-  { href: "#websites", key: "websites" },
-  { href: "#projects", key: "projects" },
   { href: "#contact", key: "contact" },
 ];
 
@@ -66,7 +64,9 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="relative w-6 h-5 flex flex-col justify-between"
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
             <span
               className={`block h-0.5 w-full bg-white transition-all duration-300 ${
@@ -93,6 +93,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            id="mobile-navigation"
             className="md:hidden bg-[#111827] border-b border-[#1f2937] overflow-hidden"
           >
             <ul className="flex flex-col px-6 py-4 gap-4">

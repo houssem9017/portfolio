@@ -6,6 +6,8 @@ export function buildMetadata(locale: SiteLocale, path = ""): Metadata {
   const description = siteConfig.description[locale];
   const basePath = locale === "fr" ? "/fr" : "/";
   const canonical = path ? absoluteUrl(`${basePath}${path}`) : absoluteUrl(basePath);
+  const isProjectPath = path.startsWith("/work/");
+  const projectSlug = isProjectPath ? path.replace(/^\/work\//, "") : "";
   const ogLocale = locale === "fr" ? "fr_FR" : "en_US";
   const altLocale = locale === "fr" ? "en_US" : "fr_FR";
 
@@ -30,9 +32,9 @@ export function buildMetadata(locale: SiteLocale, path = ""): Metadata {
     alternates: {
       canonical,
       languages: {
-        en: absoluteUrl("/"),
-        fr: absoluteUrl("/fr"),
-        "x-default": absoluteUrl("/"),
+        en: absoluteUrl(isProjectPath ? `/work/${projectSlug}` : "/"),
+        fr: absoluteUrl(isProjectPath ? `/fr/work/${projectSlug}` : "/fr"),
+        "x-default": absoluteUrl(isProjectPath ? `/work/${projectSlug}` : "/"),
       },
     },
     openGraph: {
